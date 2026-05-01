@@ -11,37 +11,9 @@ body {
     color: #333;
 }
 
-/* BARRA DE NAVEGACIÓN */
-nav {
-    background-color: #1a2a3a;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 1rem;
-}
-nav ul li {
-    margin: 0 1.5rem;
-}
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-nav ul li a:hover {
-    color: #ffaa00;
-}
-
 /* BANNER CON FONDO */
 .banner {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/banner.jpg');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/banner.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
