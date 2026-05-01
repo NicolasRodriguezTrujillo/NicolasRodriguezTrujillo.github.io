@@ -10,18 +10,13 @@ body {
     line-height: 1.6;
     color: #333;
 }
-
-/* BANNER CON FONDO */
-.banner {
-    background: url('../img/banner.png');
+header{
+    width: 100%;
+    height: 600px;
+    background-image: linear-gradient(180deg,  #58606642 25%, #41526148 50%, #28455c2f 75%, #0038567e 100%), url(../img/banner.png);
     background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+    background-attachment: fixed;
+    position: relative;
 }
 .textos-inicio h1{
     font-size: 70px;
@@ -147,4 +142,5 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+    padding-bottom: 0%;
 }
