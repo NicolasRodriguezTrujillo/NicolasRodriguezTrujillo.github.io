@@ -11,29 +11,67 @@
 </head>
 <body>
 
-    <!-- BANNER PRINCIPAL CON FONDO -->
-        <header id="inicio" class="banner">
-                <nav>
-                    <a href="#">Inicio</a>
-                    <a href="#">Sobre mi</a>
-                    <a href="#">Tecnologias</a>
-                    <a href="#">Estudios</a>
-                    <a href="#">Proyectos</a>
-                    <a href="#">Contacto</a>
-                </nav>
-                <section class="textos-inicio">
-                    <h1>Nicolas Rodriguez</h1>
-                    <h2>Data Analyst | Front-end</h2>
-                    <div class="buttons">
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-twitter"></a>
-                        <a href="#" class="fa fa-instagram"></a>
-                        <a href="#" class="fa fa-pinterest-p"></a>
-                        <a href="#" class="fa fa-linkedin"></a>
-                      </div>
-                 </section>
-                <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C158.29,151.47 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
-            </header>
+    <header>
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">About Me</a>
+
+            <!-- Toggle button -->
+            <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+            <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Link -->
+                <li class="nav-item"><a class="nav-link" href="#">Technologies</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+
+            <!-- Icons -->
+            <ul class="navbar-nav d-flex flex-row me-1">
+                <li class="nav-item me-3 me-lg-0">
+                <a class="nav-link" href="#"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li class="nav-item me-3 me-lg-0">
+                <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+            </ul>
+            <!-- Search -->
+            <form class="w-auto">
+                <input
+                type="search"
+                class="form-control"
+                placeholder="Search"
+                aria-label="Search"
+                />
+            </form>
+            </div>
+        </div>
+        <!-- Container wrapper -->
+        </nav>
+        <section class="textos-inicio">
+                    <h1>VideoGame Store</h1>
+                    <h2>By Nicolas Rodriguez</h2>
+        </section>
+                 
+        <div class="wave" style="height: 220px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-1.41,0.50 C220.93,23.19 381.77,129.77 500.27,40.95 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+        </header>
+        <main>
 
     <!-- SECCIÓN: SOBRE MÍ (con foto y descripción) -->
     <section id="sobre-mi" class="seccion">

@@ -23,6 +23,17 @@ body {
     text-align: center;
     color: white;
 }
+.textos-inicio h1{
+    font-size: 70px;
+    color:#fff;
+}
+
+.textos-inicio h2{
+    font-size: 30px;
+    font-weight: 300;
+    color:#fff;
+    margin-bottom: 4%;
+}
 .banner-contenido h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
@@ -136,60 +147,4 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-}
-header{
-    width: 100%;
-    height: 600px;
-    background: #44A08D;  
-    background: linear-gradient(to right, hsla(181, 72%, 13%, 0.596), #44a08d94), url(../IMG/fondo1.jpg);   
-    background: linear-gradient(to right, hsla(181, 72%, 13%, 0.596), #44a08d94), url(../IMG/fondo1.jpg); 
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-}
-
-nav{
-    text-align: right;
-    padding: 30px 50px 0px 0px;
-}
-
-nav a{
-    color: blanchedalmond;
-    font-weight: 300;
-    text-decoration: none;
-    margin-right: 10px;
-}
-nav > a:hover{
-    text-decoration: underline;
-}
-
-header .textos-inicio{
-    display: flex;
-    height: 430px;
-    width: 100%;
-    align-items:center;
-    justify-content:center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.textos-inicio h1{
-    font-size: 70px;
-    color:#fff;
-    animation: moverDerecha 1s ease-in;
-}
-
-.textos-inicio h2{
-    font-size: 30px;
-    font-weight: 300;
-    color:#fff;
-    animation: moverIzquierda 1s ease-in;
-    margin-bottom: 4%;
-}
-
-
-.textos-inicio a:hover{
-    color:rgb(10, 23, 24);
-    transition: 0.5s;
-    cursor: pointer;
 }
