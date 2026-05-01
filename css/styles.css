@@ -54,12 +54,16 @@ body {
 .fondo-claro {
     background-color: #f4f4f4;
 }
-
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
 h2 {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
-    color: #1a2a3a;
+    color: #ffffff;
 }
 
 /* PERFIL (foto + texto) */
