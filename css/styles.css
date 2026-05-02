@@ -465,51 +465,8 @@ body {
 }
 
 
-/* ----------------------------------------------------------------
-   5. STATS
-   Tres números debajo del hero para dar credibilidad rápida.
----------------------------------------------------------------- */
 
-.divider {
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin: 0 2.5rem;
-}
 
-.stats {
-    display: flex;
-    gap: 3rem;
-    padding: 2rem 2.5rem;
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-/* El número grande */
-.stat-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #fff;
-}
-
-/* El "+" o "%" al lado del número, en morado */
-.stat-num span {
-    color: #7c3aed;
-}
-
-/* La etiqueta debajo del número */
-.stat-label {
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.3);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
 
 
 /* ----------------------------------------------------------------
