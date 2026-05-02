@@ -20,6 +20,8 @@ body {
     font-family: 'DM Sans', sans-serif; /* fuente principal para texto */
     background: #0b0b0f;               /* fondo casi negro */
     color: #fff;                        /* texto blanco por defecto */
+    margin: 0;    
+    padding: 0;
 }
 
 
