@@ -196,7 +196,8 @@ body {
 ---------------------------------------------------------------- */
 
 .hero {
-    padding: 5rem 2.5rem 4rem;
+    padding: 7rem 2.5rem 6rem;
+    min-height: calc(100vh - 60px); /* que ocupe casi toda la pantalla */
     display: grid;
     grid-template-columns: 1fr 1fr; /* dos columnas iguales */
     align-items: center;
@@ -210,7 +211,7 @@ body {
 .hero-left {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem; /* espacio entre cada elemento */
+    gap: 1.75rem; /* espacio entre cada elemento */
 }
 
 /* 
@@ -362,8 +363,8 @@ body {
 */
 .photo-frame {
     position: relative;
-    width: 260px;
-    height: 300px;
+    width: 300px;
+    height: 360px;
 }
 
 /* El cuadro desplazado detrás de la foto */
@@ -380,8 +381,8 @@ body {
 /* El contenedor principal de la foto */
 .photo-box {
     position: relative; /* para que las esquinas decorativas se posicionen dentro */
-    width: 260px;
-    height: 300px;
+    width: 300px;
+    height: 360px;
     background: #1a1a2e;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.06);
