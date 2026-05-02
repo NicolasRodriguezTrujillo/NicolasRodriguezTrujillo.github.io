@@ -714,3 +714,16 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+.section-divider-animated {
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, #a78bfa, #5eead4);
+    border: none;
+    margin: 4rem auto;
+    transition: width 1s ease;
+}
+
+.section-divider-animated.aos-animate {
+    width: 80%;
+}
