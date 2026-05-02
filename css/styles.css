@@ -532,3 +532,182 @@ body {
         margin: 0 1.5rem;
     }
 }
+
+/* 
+  ================================================================
+  ABOUT SINGLE COLUMN – Estilo "comentario con avatar"
+  ================================================================
+  El avatar flota a la izquierda y el texto tiene forma de burbuja.
+  Todo en una sola columna, sin grids complejos.
+*/
+
+.about-single {
+  padding: 5rem 2rem;
+  max-width: 800px;      /* más estrecho para que se lea cómodo */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.about-single-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* El "About Me" pequeño arriba */
+.section-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(139, 92, 246, 0.7);
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+/* Bloque conversacional: usa flex para alinear avatar y burbuja */
+.conversation-block {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;    /* la burbuja empieza arriba junto al avatar */
+  flex-wrap: wrap;            /* si no cabe, se apila en móvil */
+}
+
+/* Avatar: circular, tamaño mediano */
+.avatar-comment {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(139, 92, 246, 0.5);
+  background: #1e1e2e;
+  display: block;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.avatar-comment:hover {
+  transform: scale(1.02);
+}
+
+/* Placeholder por si no hay imagen */
+.avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #1e1e2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #a78bfa;
+  border: 2px solid rgba(139, 92, 246, 0.5);
+}
+
+/* 
+  BURBUJA DE DIÁLOGO 
+  Parece un globo de texto en un chat.
+*/
+.comment-bubble {
+  flex: 1;                    /* ocupa el espacio restante */
+  background: rgba(30, 30, 46, 0.7);
+  backdrop-filter: blur(2px);
+  border-radius: 24px;
+  border-top-left-radius: 8px;  /* le da forma de burbuja de chat */
+  padding: 1.5rem;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* 
+  La "colita" de la burbuja, que apunta hacia el avatar.
+  Se genera con un pseudo-elemento ::before.
+  Solo visible en escritorio (cuando avatar y burbuja están uno al lado del otro).
+*/
+.comment-bubble::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 12px 8px 0;
+  border-color: transparent rgba(139, 92, 246, 0.3) transparent transparent;
+}
+
+/* Párrafos dentro de la burbuja */
+.comment-bubble p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1rem;
+}
+
+.comment-bubble p:last-of-type {
+  margin-bottom: 0;
+}
+
+.highlight {
+  color: #a78bfa;
+  font-weight: 500;
+}
+
+/* Pie de la burbuja (firma o cita) */
+.bubble-footer {
+  margin-top: 1rem;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: rgba(139, 92, 246, 0.6);
+  text-align: right;
+  border-top: 1px dashed rgba(139, 92, 246, 0.3);
+  padding-top: 0.75rem;
+}
+
+/* 
+  ================================================================
+  RESPONSIVE: en móvil, el avatar se centra arriba y la burbuja abajo
+  ================================================================
+*/
+@media (max-width: 600px) {
+  .about-single {
+    padding: 3rem 1.5rem;
+  }
+
+  .conversation-block {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .comment-bubble {
+    width: 100%;
+    border-top-left-radius: 24px;  /* anulo el pico cuadrado */
+    border-top-right-radius: 24px;
+  }
+
+  /* En móvil, la colita de la burbuja apunta hacia arriba (al avatar) */
+  .comment-bubble::before {
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 8px 12px 8px;
+    border-color: transparent transparent rgba(139, 92, 246, 0.3) transparent;
+  }
+
+  .avatar-comment, .avatar-placeholder {
+    width: 70px;
+    height: 70px;
+  }
+}

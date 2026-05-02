@@ -77,7 +77,7 @@
          La primera sección que ve el visitante.
          Dividida en dos columnas: texto a la izquierda, foto a la derecha.
     ============================================================ -->
-    <section class="hero" id="about">
+    <section class="hero" id="home">
 
         <!-- Columna izquierda: mi presentación -->
         <div class="hero-left" data-aos="fade-right">
@@ -140,6 +140,62 @@
         </div>
 
     </section>
+
+    <!-- 
+  ============================================================
+  ABOUT ME (versión UNA COLUMNA + AVATAR COMENTARISTA)
+  ============================================================
+  En lugar de dividir en dos columnas, el avatar aparece 
+  "flotando" junto al texto como si estuviera hablando.
+  El texto principal tiene forma de burbuja de comentario.
+-->
+<section class="about-single" id="about">
+  <div class="about-single-container" data-aos="fade-up">
+
+    <!-- Encabezado simple: "ABOUT ME" + "Who I Am" -->
+    <span class="section-eyebrow">About Me</span>
+    <h2 class="section-title">Who I Am</h2>
+
+    <!-- 
+      Bloque conversacional: avatar + burbuja de texto
+    -->
+    <div class="conversation-block">
+      
+      <!-- Mi avatar (la foto) -->
+      <div class="avatar-bubble">
+        <img src="img/avatar.png" alt="Nicolás Rodríguez" class="avatar-comment">
+      </div>
+
+      <!-- 
+        Burbuja de diálogo que contiene la descripción personal.
+        Parece que el avatar está "diciendo" esto.
+      -->
+      <div class="comment-bubble">
+        <p>
+          ¡Hola! Soy <strong class="highlight">Nicolás Rodríguez</strong>, 
+          <strong class="highlight">Data Analyst con alma de Frontend</strong>. 
+          Transformo datos en decisiones y diseños en experiencias. 
+          Construyo todo desde cero.
+        </p>
+        <p>
+          Me encanta resolver problemas donde los números y las personas 
+          se encuentran. Por ejemplo: dashboards que no solo miden KPIs, 
+          sino que cualquier persona del equipo pueda usarlos sin manual.
+        </p>
+        <p>
+          Fuera del código, me encontrarás <em>aprendiendo algo nuevo 
+          (ahora sushi casero), jugando ajedrez o pedaleando sin mapa</em>.
+          ¿Mi filosofía? Si no existe, lo construyo.
+        </p>
+        <div class="bubble-footer">
+          <span>✦ Nicolás, comentando desde cero ✦</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
     
     <!-- ============================================================
