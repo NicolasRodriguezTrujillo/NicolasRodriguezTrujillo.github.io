@@ -204,6 +204,7 @@ body {
     gap: 3rem;
     max-width: 1100px;
     margin: 0 auto; /* centrado horizontalmente */
+    width: 100%;
 }
 
 /* --- Columna izquierda: texto --- */
