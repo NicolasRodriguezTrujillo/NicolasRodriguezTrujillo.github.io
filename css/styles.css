@@ -196,13 +196,13 @@ body {
 ---------------------------------------------------------------- */
 
 .hero {
-    padding: 7rem 2.5rem 6rem;
+    padding: 0 2.5rem;
     min-height: calc(100vh - 60px); /* que ocupe casi toda la pantalla */
     display: grid;
     grid-template-columns: 1fr 1fr; /* dos columnas iguales */
     align-items: center;
     gap: 3rem;
-    max-width: 960px;
+    max-width: 1100px;
     margin: 0 auto; /* centrado horizontalmente */
 }
 
