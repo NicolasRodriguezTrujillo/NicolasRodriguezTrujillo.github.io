@@ -83,7 +83,7 @@
         <div class="hero-left" data-aos="fade-right">
 
             <!-- Pequeño texto arriba del nombre para llamar la atención del recruiter -->
-            <div class="hero-eyebrow">Disponible para trabajar</div>
+            <div class="hero-eyebrow">Ready to work</div>
 
             <!-- Mi nombre: "Nicolás" normal y "Rodríguez" con efecto outline (solo el borde) -->
             <h1 class="hero-name">
@@ -100,14 +100,14 @@
 
             <!-- Descripción corta sobre mí -->
             <p class="hero-desc">
-                Transformo datos en decisiones y diseños en experiencias.
-                Basado en Colombia, construyendo desde cero.
+                I transform data into decisions and designs into experiences.
+                Building from scratch.
             </p>
 
             <!-- Botones de llamada a la acción -->
             <div class="hero-cta">
-                <a href="#projects" class="btn-primary">Ver proyectos</a>
-                <a href="#contact" class="btn-ghost">Contacto</a>
+                <a href="#projects" class="btn-primary">Projects</a>
+                <a href="#contact" class="btn-ghost">Contact</a>
             </div>
 
         </div>
@@ -182,24 +182,7 @@
 
     <!-- AOS: inicializo las animaciones de scroll -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,   /* duración de cada animación en milisegundos */
-            once: true       /* la animación solo ocurre una vez al hacer scroll */
-        });
-    </script>
-
-    <!-- Lógica del menú hamburguesa para móvil -->
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        hamburger.addEventListener('click', function() {
-            /* Agrego o quito la clase 'open' para mostrar/ocultar el menú */
-            hamburger.classList.toggle('open');
-            mobileMenu.classList.toggle('open');
-        });
-    </script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
