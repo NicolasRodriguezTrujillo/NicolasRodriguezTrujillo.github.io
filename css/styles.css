@@ -542,190 +542,197 @@ body {
   Todo en una sola columna, sin grids complejos.
 */
 
+/* ================================================================
+   ABOUT ME SECTION
+================================================================ */
+
 .about-single {
-  padding: 5rem 2rem;
-  max-width: 1200px;      /* más estrecho para que se lea cómodo */
+  padding: 5rem 2.5rem;
+  max-width: 1100px;
   margin: 0 auto;
   width: 100%;
 }
 
-.about-single-container {
+.about-header {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-/* El "About Me" pequeño arriba */
-.section-eyebrow {
+.section-num {
+  font-family: 'Syne', sans-serif;
   font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(139, 92, 246, 0.7);
-  display: inline-block;
-  margin-bottom: 0.25rem;
+  color: rgba(255,255,255,0.12);
+  letter-spacing: 0.1em;
 }
 
 .section-title {
   font-family: 'Syne', sans-serif;
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #fff;
   letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-/* Bloque conversacional: usa flex para alinear avatar y burbuja */
+.title-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(139,92,246,0.6);
+}
+
+/* Fila: avatar izquierda, burbujas derecha */
 .conversation-block {
   display: flex;
   gap: 2rem;
-  align-items: flex-start;    /* la burbuja empieza arriba junto al avatar */
-  flex-wrap: wrap;            /* si no cabe, se apila en móvil */
+  align-items: flex-start;
 }
 
-/* Avatar: circular, tamaño mediano */
+/* Columna del avatar */
+.avatar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
 .avatar-comment {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(139, 92, 246, 0.5);
-  background: #1e1e2e;
-  display: block;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  border: 2px solid rgba(139,92,246,0.5);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   transition: transform 0.2s;
+  display: block;
 }
 
-.avatar-comment:hover {
-  transform: scale(1.02);
-}
+.avatar-comment:hover { transform: scale(1.03); }
 
-/* Placeholder por si no hay imagen */
-.avatar-placeholder {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: #1e1e2e;
+/* Status debajo del avatar */
+.status-chip {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-family: 'Syne', sans-serif;
-  font-size: 3rem;
-  font-weight: 800;
-  color: #a78bfa;
-  border: 2px solid rgba(139, 92, 246, 0.5);
+  gap: 6px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  white-space: nowrap;
 }
 
-/* 
-  BURBUJA DE DIÁLOGO 
-  Parece un globo de texto en un chat.
-*/
+.dot-green {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* Columna de burbujas */
+.bubbles-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+/* Burbuja principal */
 .comment-bubble {
-  flex: 1;                    /* ocupa el espacio restante */
-  background: rgba(30, 30, 46, 0.7);
-  backdrop-filter: blur(2px);
+  background: rgba(20,20,38,0.8);
+  backdrop-filter: blur(4px);
   border-radius: 24px;
-  border-top-left-radius: 8px;  /* le da forma de burbuja de chat */
+  border-top-left-radius: 4px;
   padding: 2rem;
-  border: 1px solid rgba(139, 92, 246, 0.2);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(139,92,246,0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
   position: relative;
 }
 
-/* 
-  La "colita" de la burbuja, que apunta hacia el avatar.
-  Se genera con un pseudo-elemento ::before.
-  Solo visible en escritorio (cuando avatar y burbuja están uno al lado del otro).
-*/
+/* Colita apuntando al avatar */
 .comment-bubble::before {
   content: '';
   position: absolute;
   left: -10px;
   top: 20px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 8px 12px 8px 0;
-  border-color: transparent rgba(139, 92, 246, 0.3) transparent transparent;
+  border: 8px solid transparent;
+  border-right-color: rgba(139,92,246,0.2);
 }
 
-/* Párrafos dentro de la burbuja */
 .comment-bubble p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.7);
   margin-bottom: 1rem;
 }
 
-.comment-bubble p:last-of-type {
-  margin-bottom: 0;
-}
+.comment-bubble p:last-of-type { margin-bottom: 0; }
 
-.highlight {
-  font-size: inherit;
-  color: #a78bfa;
-  font-weight: 500;
-}
+.highlight { color: #a78bfa; font-weight: 500; }
+.highlight-teal { color: #5eead4; font-weight: 500; }
 
-/* Pie de la burbuja (firma o cita) */
 .bubble-footer {
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  color: rgba(139, 92, 246, 0.6);
-  text-align: right;
-  border-top: 1px dashed rgba(139, 92, 246, 0.3);
+  margin-top: 1.25rem;
   padding-top: 1rem;
+  border-top: 1px dashed rgba(139,92,246,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* 
-  ================================================================
-  RESPONSIVE: en móvil, el avatar se centra arriba y la burbuja abajo
-  ================================================================
-*/
+.bubble-footer span { font-size: 11px; color: rgba(139,92,246,0.5); letter-spacing: 0.06em; }
+.bubble-time { font-size: 10px !important; color: rgba(255,255,255,0.15) !important; }
+
+/* Segunda burbuja: soft skills */
+.bubble-skills {
+  background: rgba(20,20,38,0.5);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  border-top-left-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bubble-skills-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.skills-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.skill-pill {
+  font-size: 12px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.03);
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.skill-pill:hover {
+  border-color: rgba(139,92,246,0.4);
+  color: #a78bfa;
+  background: rgba(139,92,246,0.08);
+}
+
+/* Responsive */
 @media (max-width: 600px) {
-  .about-single {
-    padding: 4rem 1.5rem;
-  }
-
-  .conversation-block {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .comment-bubble {
-    width: 100%;
-    border-top-left-radius: 24px;  /* anulo el pico cuadrado */
-    border-top-right-radius: 24px;
-  }
-
-  /* En móvil, la colita de la burbuja apunta hacia arriba (al avatar) */
-  .comment-bubble::before {
-    left: -12px;
-    top: 28px;
-    transform: translateX(-50%);
-    border-width: 10px 14px 10px 0;
-    border-color: transparent transparent rgba(139, 92, 246, 0.3) transparent;
-  }
-
-  .avatar-comment, .avatar-placeholder {
-    width: 70px;
-    height: 70px;
-  }
-}
-html {
-    scroll-behavior: smooth;
-}
-
-.section-divider-animated {
-    width: 0;
-    height: 1px;
-    background: linear-gradient(90deg, #a78bfa, #5eead4);
-    border: none;
-    margin: 4rem auto;
-    transition: width 1s ease;
-}
-
-.section-divider-animated.aos-animate {
-    width: 80%;
+  .about-single { padding: 4rem 1.5rem; }
+  .conversation-block { flex-direction: column; align-items: center; }
+  .comment-bubble { border-top-left-radius: 24px; }
+  .comment-bubble::before { display: none; }
 }

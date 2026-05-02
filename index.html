@@ -149,52 +149,75 @@
   "flotando" junto al texto como si estuviera hablando.
   El texto principal tiene forma de burbuja de comentario.
 -->
+<!-- ============================================================
+     ABOUT ME SECTION
+     Una columna: avatar a la izquierda, burbujas saliendo de él.
+============================================================ -->
 <section class="about-single" id="about">
-  <div class="about-single-container" data-aos="fade-up">
 
-    <!-- Encabezado simple: "ABOUT ME" + "Who I Am" -->
-    <div class="hero-eyebrow">Ready to work</div>
-    <h2 class="section-title">Who I Am</h2>
+  <!-- Header de la sección -->
+  <div class="about-header">
+    <div class="section-eyebrow">About Me</div>
+    <span class="section-num">01 / 05</span>
+  </div>
 
-    <!-- 
-      Bloque conversacional: avatar + burbuja de texto
-    -->
-    <div class="conversation-block">
-      
-      <!-- Mi avatar (la foto) -->
-      <div class="avatar-bubble">
-        <img src="img/avatar.png" alt="Nicolás Rodríguez" class="avatar-comment">
+  <h2 class="section-title">Who I <span class="title-outline">Am</span></h2>
+
+  <!-- Bloque conversacional: avatar + burbujas en fila -->
+  <div class="conversation-block">
+
+    <!-- Avatar con status debajo -->
+    <div class="avatar-col">
+      <img src="img/avatar.png" alt="Nicolás Rodríguez" class="avatar-comment">
+      <div class="status-chip">
+        <div class="dot-green"></div>
+        Available to work
       </div>
+    </div>
 
-      <!-- 
-        Burbuja de diálogo que contiene la descripción personal.
-        Parece que el avatar está "diciendo" esto.
-      -->
+    <!-- Burbujas saliendo del avatar -->
+    <div class="bubbles-col">
+
+      <!-- Burbuja principal -->
       <div class="comment-bubble">
         <p>
-          ¡Hola! Soy <strong class="highlight">Nicolás Rodríguez</strong>, 
-          <strong class="highlight">Data Analyst con alma de Frontend</strong>. 
-          Transformo datos en decisiones y diseños en experiencias. 
-          Construyo todo desde cero.
+          Hi! I'm <strong class="highlight">Nicolás Rodríguez</strong>, 
+          a <strong class="highlight">Data Analyst with a Frontend soul</strong>. 
+          I transform data into decisions and designs into experiences. 
+          Building everything from scratch.
         </p>
         <p>
-          Me encanta resolver problemas donde los números y las personas 
-          se encuentran. Por ejemplo: dashboards que no solo miden KPIs, 
-          sino que cualquier persona del equipo pueda usarlos sin manual.
+          I love solving problems where numbers and people meet — dashboards 
+          that don't just measure KPIs, but that 
+          <span class="highlight-teal">anyone on the team can use without a manual</span>.
         </p>
         <p>
-          Fuera del código, me encontrarás <em>aprendiendo algo nuevo 
-          (ahora sushi casero), jugando ajedrez o pedaleando sin mapa</em>.
-          ¿Mi filosofía? Si no existe, lo construyo.
+          Outside of code, you'll find me learning something new, 
+          playing chess, or cycling without a map. 
+          My philosophy? <span class="highlight">If it doesn't exist, I build it.</span>
         </p>
         <div class="bubble-footer">
-          <span>✦ Nicolás, comentando desde cero ✦</span>
+          <span>✦ Nicolás, building from scratch ✦</span>
+          <span class="bubble-time">Just now</span>
+        </div>
+      </div>
+
+      <!-- Segunda burbuja: soft skills -->
+      <div class="bubble-skills">
+        <span class="bubble-skills-label">Soft Skills</span>
+        <div class="skills-row">
+          <span class="skill-pill">Fast Learner</span>
+          <span class="skill-pill">Team Player</span>
+          <span class="skill-pill">Problem Solver</span>
+          <span class="skill-pill">Self-taught</span>
+          <span class="skill-pill">Detail Oriented</span>
+          <span class="skill-pill">Curious</span>
         </div>
       </div>
 
     </div>
-
   </div>
+
 </section>
 
     
