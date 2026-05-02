@@ -1,37 +1,205 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicolás Rodríguez | Data Analyst & Front-end</title>
+    <title>Nicolás Rodríguez | Data Analyst & Frontend</title>
+
+    <!-- Mi hoja de estilos principal -->
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts: Syne para títulos (negrita y moderna) y DM Sans para texto normal -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- AOS: librería para animaciones al hacer scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome: para los íconos (LinkedIn, email, etc.) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
 
-    <header>
-            <nav>
-    <div class="nav-left">
-         <img src="img/mi-foto.png" class="avatar" style="object-fit:cover" alt="Nicolás R."> 
-   
-    <span class="nav-name">Nicolás <span>R.</span></span>
-  </div>
+    <!-- ============================================================
+         NAV
+         Barra de navegación fija en la parte superior.
+         A la izquierda: mi avatar + nombre.
+         A la derecha: los links a cada sección.
+    ============================================================ -->
+    <nav class="navbar">
 
-  <!-- DERECHA: links -->
-  <ul class="nav-links">
-    <li><a href="#about">About Me</a></li>
-    <li><a href="#tech">Technologies</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-</header>
-        <main>
+        <!-- Lado izquierdo del nav: mi foto/iniciales y mi nombre -->
+        <div class="nav-left">
+            <!-- 
+                Por ahora uso mis iniciales como placeholder.
+                Cuando tenga mi foto, reemplazo este div por:
+                <img src="img/mi-foto.jpg" class="nav-avatar" alt="Nicolás Rodríguez">
+            -->
+            <div class="nav-avatar">NR</div>
+            <span class="nav-name">Nicolás <span>R.</span></span>
+        </div>
+
+        <!-- Lado derecho del nav: links de navegación -->
+        <ul class="nav-links">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#technologies">Technologies</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- 
+            Botón hamburguesa para móvil.
+            Solo aparece en pantallas pequeñas (lo controlo desde CSS con media queries).
+            El JS al final del body se encarga de abrir/cerrar el menú.
+        -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </nav>
+
+    <!-- Menú móvil: oculto por defecto, aparece al hacer clic en el hamburguesa -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">About Me</a>
+        <a href="#technologies">Technologies</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
 
 
+    <!-- ============================================================
+         HERO SECTION
+         La primera sección que ve el visitante.
+         Dividida en dos columnas: texto a la izquierda, foto a la derecha.
+    ============================================================ -->
+    <section class="hero" id="about">
+
+        <!-- Columna izquierda: mi presentación -->
+        <div class="hero-left" data-aos="fade-right">
+
+            <!-- Pequeño texto arriba del nombre para llamar la atención del recruiter -->
+            <div class="hero-eyebrow">Disponible para trabajar</div>
+
+            <!-- Mi nombre: "Nicolás" normal y "Rodríguez" con efecto outline (solo el borde) -->
+            <h1 class="hero-name">
+                Nicolás<br>
+                <span class="accent">Rodríguez</span>
+            </h1>
+
+            <!-- Mis dos roles: Data Analyst y Frontend, separados por un punto -->
+            <div class="hero-roles">
+                <span class="role-badge role-data">Data Analyst</span>
+                <div class="role-sep"></div>
+                <span class="role-badge role-front">Frontend</span>
+            </div>
+
+            <!-- Descripción corta sobre mí -->
+            <p class="hero-desc">
+                Transformo datos en decisiones y diseños en experiencias.
+                Basado en Colombia, construyendo desde cero.
+            </p>
+
+            <!-- Botones de llamada a la acción -->
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary">Ver proyectos</a>
+                <a href="#contact" class="btn-ghost">Contacto</a>
+            </div>
+
+        </div>
+
+        <!-- Columna derecha: mi foto -->
+        <div class="hero-right" data-aos="fade-left">
+
+            <!-- 
+                Contenedor de la foto con efecto de marco desplazado.
+                .photo-frame es el contenedor general.
+                .photo-border es el cuadro morado desplazado que se ve detrás.
+                .photo-box es donde va la foto real.
+            -->
+            <div class="photo-frame">
+                <div class="photo-border"></div>
+                <div class="photo-box">
+
+                    <!-- Esquinas decorativas en las 4 puntas de la foto -->
+                    <div class="photo-corner tl"></div>
+                    <div class="photo-corner tr"></div>
+                    <div class="photo-corner bl"></div>
+                    <div class="photo-corner br"></div>
+
+                    <!-- 
+                        Placeholder con mis iniciales.
+                        Cuando tenga mi foto, reemplazo todo esto por:
+                        <img src="img/mi-foto.jpg" alt="Nicolás Rodríguez" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+                    -->
+                    <div class="photo-placeholder-icon">NR</div>
+                    <span class="photo-placeholder-text">Tu foto aquí</span>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Línea divisora entre el hero y las estadísticas -->
+    <hr class="divider">
+
+    <!-- ============================================================
+         STATS
+         Tres números rápidos que le dan credibilidad a mi perfil.
+         Los puse debajo del hero para que el recruiter los vea de inmediato.
+    ============================================================ -->
+    <div class="stats" data-aos="fade-up">
+
+        <div class="stat-item">
+            <span class="stat-num">5<span>+</span></span>
+            <span class="stat-label">Proyectos</span>
+        </div>
+
+        <div class="stat-item">
+            <span class="stat-num">2<span>+</span></span>
+            <span class="stat-label">Tecnologías</span>
+        </div>
+
+        <div class="stat-item">
+            <span class="stat-num">100<span>%</span></span>
+            <span class="stat-label">Dedicación</span>
+        </div>
+
+    </div>
+
+
+    <!-- ============================================================
+         SCRIPTS
+         Los pongo al final del body para que la página cargue más rápido.
+         Primero carga el contenido visual, luego el JavaScript.
+    ============================================================ -->
+
+    <!-- AOS: inicializo las animaciones de scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,   /* duración de cada animación en milisegundos */
+            once: true       /* la animación solo ocurre una vez al hacer scroll */
+        });
+    </script>
+
+    <!-- Lógica del menú hamburguesa para móvil -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function() {
+            /* Agrego o quito la clase 'open' para mostrar/ocultar el menú */
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+        });
+    </script>
 
 </body>
 </html>

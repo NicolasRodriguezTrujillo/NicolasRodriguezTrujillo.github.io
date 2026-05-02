@@ -1,13 +1,573 @@
-/* RESET básico */
-* {
+/* ================================================================
+   STYLES.CSS — Portafolio de Nicolás Rodríguez
+   Organizado por secciones para que sea fácil de encontrar todo.
+   ================================================================ */
+
+
+/* ----------------------------------------------------------------
+   1. RESET Y BASE
+   Elimino los estilos por defecto del navegador para partir
+   desde cero y tener control total sobre el diseño.
+---------------------------------------------------------------- */
+
+*, *::before, *::after {
+    box-sizing: border-box; /* el padding y border no agrandan el elemento */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: 'open sans';
-    line-height: 1.6;
-    color: #333;
+    font-family: 'DM Sans', sans-serif; /* fuente principal para texto */
+    background: #0b0b0f;               /* fondo casi negro */
+    color: #fff;                        /* texto blanco por defecto */
 }
 
+
+/* ----------------------------------------------------------------
+   2. NAVBAR
+   Barra de navegación en la parte superior.
+   Uso flexbox para poner el logo a la izquierda y los links a la derecha.
+---------------------------------------------------------------- */
+
+.navbar {
+    background: #0b0b0f;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06); /* línea sutil abajo */
+    padding: 0 2.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo izquierda, links derecha */
+}
+
+/* --- Lado izquierdo del nav --- */
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* espacio entre el avatar y el nombre */
+}
+
+/* 
+   Avatar circular con mis iniciales.
+   Cuando tenga mi foto, este div se reemplaza por un <img>.
+*/
+.nav-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;                          /* lo hace círculo */
+    background: #1e1e2e;
+    border: 1.5px solid rgba(139, 92, 246, 0.4); /* borde morado sutil */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #a78bfa;                              /* texto morado claro */
+}
+
+/* Cuando agregue mi foto, uso este estilo en el <img> */
+.nav-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* la foto llena el círculo sin deformarse */
+    border-radius: 50%;
+}
+
+.nav-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.02em;
+}
+
+/* La "R." al final del nombre va en morado */
+.nav-name span {
+    color: #a78bfa;
+}
+
+/* --- Lado derecho del nav: links --- */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;      /* espacio entre cada link */
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s; /* animación suave al hacer hover */
+    position: relative;     /* necesito esto para el subrayado animado */
+    padding-bottom: 2px;
+}
+
+/* 
+   Subrayado animado: empieza con ancho 0 y se expande al hacer hover.
+   Uso el pseudo-elemento ::after para no agregar HTML extra.
+*/
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;               /* empieza invisible */
+    height: 1px;
+    background: #a78bfa;    /* morado */
+    transition: width 0.25s ease; /* animación */
+}
+
+.nav-links a:hover {
+    color: #a78bfa;
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* se expande al hacer hover */
+}
+
+
+/* ----------------------------------------------------------------
+   3. MENÚ HAMBURGUESA (para móvil)
+   Solo aparece en pantallas pequeñas (ver media queries al final).
+---------------------------------------------------------------- */
+
+.hamburger {
+    display: none;          /* oculto en escritorio */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* Las tres líneas del ícono hamburguesa */
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease; /* animación al convertirse en X */
+}
+
+/* Cuando está abierto, las tres líneas se convierten en una X */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0; /* la línea del medio desaparece */
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* El menú desplegable en móvil */
+.mobile-menu {
+    display: none;          /* oculto por defecto */
+    flex-direction: column;
+    background: #0b0b0f;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+    padding: 1.25rem 2rem;
+    gap: 1rem;
+}
+
+.mobile-menu.open {
+    display: flex; /* aparece cuando JS agrega la clase .open */
+}
+
+.mobile-menu a {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.mobile-menu a:hover {
+    color: #a78bfa;
+}
+
+
+/* ----------------------------------------------------------------
+   4. HERO SECTION
+   La sección principal. Uso CSS Grid con dos columnas:
+   izquierda para el texto, derecha para la foto.
+---------------------------------------------------------------- */
+
+.hero {
+    padding: 5rem 2.5rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* dos columnas iguales */
+    align-items: center;
+    gap: 3rem;
+    max-width: 960px;
+    margin: 0 auto; /* centrado horizontalmente */
+}
+
+/* --- Columna izquierda: texto --- */
+
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* espacio entre cada elemento */
+}
+
+/* 
+   Pequeño texto encima del nombre.
+   El ::before agrega una línea morada a la izquierda como decoración.
+*/
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: #7c3aed; /* línea morada decorativa */
+}
+
+/* Mi nombre grande */
+.hero-name {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4rem); /* tamaño adaptable según la pantalla */
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+}
+
+/* 
+   Efecto "outline" en "Rodríguez":
+   el texto no tiene relleno, solo el borde es visible.
+   Esto lo logro con -webkit-text-stroke.
+*/
+.hero-name .accent {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(139, 92, 246, 0.7);
+}
+
+/* Badges de mis dos roles */
+.hero-roles {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.role-badge {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px; /* forma de píldora */
+    font-weight: 400;
+}
+
+/* Badge morado para Data Analyst */
+.role-data {
+    background: rgba(139, 92, 246, 0.12);
+    color: #a78bfa;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+/* Punto separador entre los dos badges */
+.role-sep {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Badge verde azulado para Frontend */
+.role-front {
+    background: rgba(20, 184, 166, 0.1);
+    color: #5eead4;
+    border: 1px solid rgba(20, 184, 166, 0.2);
+}
+
+/* Descripción corta sobre mí */
+.hero-desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.35);
+    line-height: 1.7;
+    max-width: 340px;
+}
+
+/* Botones de acción */
+.hero-cta {
+    display: flex;
+    gap: 12px;
+    margin-top: 0.5rem;
+}
+
+/* Botón principal relleno */
+.btn-primary {
+    font-size: 13px;
+    padding: 10px 22px;
+    background: #7c3aed;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #6d28d9; /* un poco más oscuro al hacer hover */
+}
+
+/* Botón secundario transparente */
+.btn-ghost {
+    font-size: 13px;
+    padding: 10px 22px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-ghost:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+/* --- Columna derecha: foto --- */
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+   El marco de la foto tiene dos capas:
+   1. .photo-border: el cuadro morado desplazado que se ve detrás (efecto de profundidad)
+   2. .photo-box: el contenedor real de la foto
+*/
+.photo-frame {
+    position: relative;
+    width: 260px;
+    height: 300px;
+}
+
+/* El cuadro desplazado detrás de la foto */
+.photo-border {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid rgba(139, 92, 246, 0.3);
+    border-radius: 12px;
+}
+
+/* El contenedor principal de la foto */
+.photo-box {
+    position: relative; /* para que las esquinas decorativas se posicionen dentro */
+    width: 260px;
+    height: 300px;
+    background: #1a1a2e;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    overflow: hidden; /* la foto no se sale del contenedor */
+}
+
+/* 
+   Cuando tenga mi foto, agrego este <img> dentro de .photo-box:
+   <img src="img/mi-foto.jpg" alt="Nicolás" style="width:100%;height:100%;object-fit:cover;">
+*/
+
+/* Placeholder con mis iniciales (mientras no tengo la foto) */
+.photo-placeholder-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.12);
+    border: 2px solid rgba(139, 92, 246, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #a78bfa;
+}
+
+.photo-placeholder-text {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* 
+   Esquinas decorativas en las 4 puntas de la foto.
+   Cada una tiene solo dos bordes visibles para dar el efecto de esquina.
+   .tl = top-left, .tr = top-right, .bl = bottom-left, .br = bottom-right
+*/
+.photo-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: #7c3aed;
+    border-style: solid;
+    opacity: 0.6;
+}
+
+.photo-corner.tl {
+    top: 10px;
+    left: 10px;
+    border-width: 2px 0 0 2px; /* solo borde arriba y a la izquierda */
+    border-radius: 3px 0 0 0;
+}
+
+.photo-corner.tr {
+    top: 10px;
+    right: 10px;
+    border-width: 2px 2px 0 0; /* solo borde arriba y a la derecha */
+    border-radius: 0 3px 0 0;
+}
+
+.photo-corner.bl {
+    bottom: 10px;
+    left: 10px;
+    border-width: 0 0 2px 2px; /* solo borde abajo y a la izquierda */
+    border-radius: 0 0 0 3px;
+}
+
+.photo-corner.br {
+    bottom: 10px;
+    right: 10px;
+    border-width: 0 2px 2px 0; /* solo borde abajo y a la derecha */
+    border-radius: 0 0 3px 0;
+}
+
+
+/* ----------------------------------------------------------------
+   5. STATS
+   Tres números debajo del hero para dar credibilidad rápida.
+---------------------------------------------------------------- */
+
+.divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 0 2.5rem;
+}
+
+.stats {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem 2.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* El número grande */
+.stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+/* El "+" o "%" al lado del número, en morado */
+.stat-num span {
+    color: #7c3aed;
+}
+
+/* La etiqueta debajo del número */
+.stat-label {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+/* ----------------------------------------------------------------
+   6. RESPONSIVE / MEDIA QUERIES
+   Adapto el diseño para pantallas pequeñas (celulares y tablets).
+   La regla: primero diseño para escritorio, luego ajusto para móvil.
+---------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    /* En móvil, el hero pasa de dos columnas a una sola columna */
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 3rem 1.5rem;
+        text-align: center;
+    }
+
+    /* La foto aparece primero en móvil (la muevo arriba con order) */
+    .hero-right {
+        order: -1;
+    }
+
+    /* El texto del eyebrow se centra */
+    .hero-eyebrow {
+        justify-content: center;
+    }
+
+    /* La descripción ocupa todo el ancho en móvil */
+    .hero-desc {
+        max-width: 100%;
+    }
+
+    /* Los botones se centran */
+    .hero-cta {
+        justify-content: center;
+    }
+
+    /* Los roles se centran */
+    .hero-roles {
+        justify-content: center;
+    }
+
+    /* El nav oculta los links y muestra el hamburguesa */
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Los stats se centran y reducen espacio */
+    .stats {
+        justify-content: center;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .divider {
+        margin: 0 1.5rem;
+    }
+}
