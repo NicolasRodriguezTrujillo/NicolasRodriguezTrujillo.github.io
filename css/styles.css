@@ -22,6 +22,7 @@ body {
     color: #fff;                        /* texto blanco por defecto */
     margin: 0;    
     padding: 0;
+    font-size: 18px;
 }
 
 
@@ -543,7 +544,7 @@ body {
 
 .about-single {
   padding: 5rem 2rem;
-  max-width: 800px;      /* más estrecho para que se lea cómodo */
+  max-width: 1200px;      /* más estrecho para que se lea cómodo */
   margin: 0 auto;
   width: 100%;
 }
@@ -566,7 +567,7 @@ body {
 
 .section-title {
   font-family: 'Syne', sans-serif;
-  font-size: 2.2rem;
+  font-size: 3rem;
   font-weight: 700;
   color: #fff;
   letter-spacing: -0.02em;
@@ -576,15 +577,15 @@ body {
 /* Bloque conversacional: usa flex para alinear avatar y burbuja */
 .conversation-block {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: flex-start;    /* la burbuja empieza arriba junto al avatar */
   flex-wrap: wrap;            /* si no cabe, se apila en móvil */
 }
 
 /* Avatar: circular, tamaño mediano */
 .avatar-comment {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(139, 92, 246, 0.5);
@@ -600,15 +601,15 @@ body {
 
 /* Placeholder por si no hay imagen */
 .avatar-placeholder {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background: #1e1e2e;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Syne', sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 800;
   color: #a78bfa;
   border: 2px solid rgba(139, 92, 246, 0.5);
@@ -624,7 +625,7 @@ body {
   backdrop-filter: blur(2px);
   border-radius: 24px;
   border-top-left-radius: 8px;  /* le da forma de burbuja de chat */
-  padding: 1.5rem;
+  padding: 2rem;
   border: 1px solid rgba(139, 92, 246, 0.2);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -649,7 +650,7 @@ body {
 
 /* Párrafos dentro de la burbuja */
 .comment-bubble p {
-  font-size: 15px;
+  font-size: 1.1rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 1rem;
@@ -660,6 +661,7 @@ body {
 }
 
 .highlight {
+  font-size: inherit;
   color: #a78bfa;
   font-weight: 500;
 }
@@ -667,12 +669,12 @@ body {
 /* Pie de la burbuja (firma o cita) */
 .bubble-footer {
   margin-top: 1rem;
-  font-size: 11px;
+  font-size: 0.85rem;
   letter-spacing: 0.05em;
   color: rgba(139, 92, 246, 0.6);
   text-align: right;
   border-top: 1px dashed rgba(139, 92, 246, 0.3);
-  padding-top: 0.75rem;
+  padding-top: 1rem;
 }
 
 /* 
@@ -682,7 +684,7 @@ body {
 */
 @media (max-width: 600px) {
   .about-single {
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem;
   }
 
   .conversation-block {
@@ -699,10 +701,10 @@ body {
 
   /* En móvil, la colita de la burbuja apunta hacia arriba (al avatar) */
   .comment-bubble::before {
-    top: -12px;
-    left: 50%;
+    left: -12px;
+    top: 28px;
     transform: translateX(-50%);
-    border-width: 0 8px 12px 8px;
+    border-width: 10px 14px 10px 0;
     border-color: transparent transparent rgba(139, 92, 246, 0.3) transparent;
   }
 
