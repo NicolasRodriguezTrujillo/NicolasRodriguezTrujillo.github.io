@@ -199,7 +199,7 @@ body {
 ---------------------------------------------------------------- */
 
 .hero {
-    padding: 0 2.5rem;
+    padding: 0 2.5rem 2rem;
     min-height: calc(100vh - 60px); /* que ocupe casi toda la pantalla */
     display: grid;
     grid-template-columns: 1fr 1fr; /* dos columnas iguales */
