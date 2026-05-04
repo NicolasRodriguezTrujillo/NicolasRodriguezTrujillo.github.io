@@ -611,115 +611,126 @@
 
         <!-- Filtros: muestran cantidad de proyectos por categoría (se actualizan por JS) -->
         <div class="projects-filters">
-            <button class="filter-btn active" data-filter="all">All <span class="filter-count" id="count-all">0</span></button>
-            <button class="filter-btn" data-filter="data">Data & Analytics <span class="filter-count" id="count-data">0</span></button>
-            <button class="filter-btn" data-filter="frontend">Frontend <span class="filter-count" id="count-frontend">0</span></button>
-        </div>
+        <button class="filter-btn active" data-filter="all">All <span class="filter-count" id="count-all">0</span></button>
+        <button class="filter-btn" data-filter="data">Data & Analytics <span class="filter-count" id="count-data">0</span></button>
+        <button class="filter-btn" data-filter="frontend">Frontend <span class="filter-count" id="count-frontend">0</span></button>
+    </div>
 
-        <!-- Grid de proyectos dinámico (cada tarjeta tiene data-category) -->
-        <div class="projects-grid">
-            <!-- Proyecto 1: Data (Sales Dashboard) -->
-            <div class="project-card" data-category="data" data-aos="fade-up">
-                <div class="project-image">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Sales Dashboard Analysis</h3>
-                    <p class="project-description">Análisis exploratorio de ventas con visualizaciones interactivas y KPIs clave. Panel que revela tendencias por región y categoría.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Pandas</span>
-                        <span>Power BI</span>
-                    </div>
-                    <a href="#" class="project-link">View project →</a>
-                </div>
+    <div class="projects-grid">
+        <!-- Proyecto 1: Data (Sales Dashboard) -->
+        <div class="project-card" data-category="data">
+            <div class="project-image">
+                <i class="fas fa-chart-line"></i>
             </div>
-
-            <!-- Proyecto 2: Data (Customer Churn) -->
-            <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="100">
-                <div class="project-image">
-                    <i class="fas fa-users"></i>
+            <div class="project-content">
+                <div class="project-badge data-badge">DATA</div>
+                <h3 class="project-title">Sales Dashboard Analysis</h3>
+                <p class="project-description">Análisis exploratorio de ventas con visualizaciones interactivas y KPIs clave. Panel que revela tendencias por región y categoría.</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>Power BI</span>
                 </div>
-                <div class="project-content">
-                    <h3 class="project-title">Customer Churn Prediction</h3>
-                    <p class="project-description">Modelo predictivo de cancelación de clientes usando regresión logística y random forest. Dashboard con segmentación de riesgo.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Scikit-learn</span>
-                        <span>Tableau</span>
-                    </div>
-                    <a href="#" class="project-link">View project →</a>
-                </div>
-            </div>
-
-            <!-- Proyecto 3: Data (Financial KPIs) -->
-            <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-image">
-                    <i class="fas fa-coins"></i>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Financial KPI Tracker</h3>
-                    <p class="project-description">Automatización de métricas financieras, ETL en Python y dashboard interactivo en Power BI para toma de decisiones.</p>
-                    <div class="project-tech">
-                        <span>SQL</span>
-                        <span>Power BI</span>
-                        <span>DAX</span>
-                    </div>
-                    <a href="#" class="project-link">View project →</a>
-                </div>
-            </div>
-
-            <!-- Proyecto 4: Frontend (Portfolio Website) -->
-            <div class="project-card" data-category="frontend" data-aos="fade-up">
-                <div class="project-image">
-                    <i class="fas fa-code"></i>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Personal Portfolio 2025</h3>
-                    <p class="project-description">Diseño responsive con animaciones, dark mode y microinteracciones. Construido con HTML5, CSS3 y vanilla JS.</p>
-                    <div class="project-tech">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <a href="#" class="project-link">View project →</a>
-                </div>
-            </div>
-
-            <!-- Proyecto 5: Frontend (Task Manager App) -->
-            <div class="project-card" data-category="frontend" data-aos="fade-up" data-aos-delay="100">
-                <div class="project-image">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">TaskFlow Manager</h3>
-                    <p class="project-description">Aplicación de gestión de tareas con drag & drop, almacenamiento local y modo oscuro. SPA con componentes reutilizables.</p>
-                    <div class="project-tech">
-                        <span>React</span>
-                        <span>CSS Modules</span>
-                        <span>LocalStorage</span>
-                    </div>
-                    <a href="#" class="project-link">View project →</a>
-                </div>
-            </div>
-
-            <!-- Proyecto 6: Frontend (Interactive Dashboard UI) -->
-            <div class="project-card" data-category="frontend" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-image">
-                    <i class="fas fa-chart-simple"></i>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Analytics Dashboard UI</h3>
-                    <p class="project-description">Maqueta interactiva de dashboard con gráficos dinámicos (Chart.js) y diseño centrado en UX para datos empresariales.</p>
-                    <div class="project-tech">
-                        <span>Tailwind</span>
-                        <span>Chart.js</span>
-                        <span>Figma</span>
-                    </div>
-                    <a href="#" class="project-link">View project →</a>
-                </div>
+                <hr class="project-divider">
+                <a href="#" class="project-link">View project →</a>
             </div>
         </div>
+
+        <!-- Proyecto 2: Data (Customer Churn) -->
+        <div class="project-card" data-category="data">
+            <div class="project-image">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="project-content">
+                <div class="project-badge data-badge">DATA</div>
+                <h3 class="project-title">Customer Churn Prediction</h3>
+                <p class="project-description">Modelo predictivo de cancelación de clientes usando regresión logística y random forest. Dashboard con segmentación de riesgo.</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Scikit-learn</span>
+                    <span>Tableau</span>
+                </div>
+                <hr class="project-divider">
+                <a href="#" class="project-link">View project →</a>
+            </div>
+        </div>
+
+        <!-- Proyecto 3: Data (Financial KPI Tracker) -->
+        <div class="project-card" data-category="data">
+            <div class="project-image">
+                <i class="fas fa-coins"></i>
+            </div>
+            <div class="project-content">
+                <div class="project-badge data-badge">DATA</div>
+                <h3 class="project-title">Financial KPI Tracker</h3>
+                <p class="project-description">Automatización de métricas financieras, ETL en Python y dashboard interactivo en Power BI para toma de decisiones.</p>
+                <div class="project-tech">
+                    <span>SQL</span>
+                    <span>Power BI</span>
+                    <span>DAX</span>
+                </div>
+                <hr class="project-divider">
+                <a href="#" class="project-link">View project →</a>
+            </div>
+        </div>
+
+        <!-- Proyecto 4: Frontend (Portfolio Website) -->
+        <div class="project-card" data-category="frontend">
+            <div class="project-image">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="project-content">
+                <div class="project-badge frontend-badge">FRONTEND</div>
+                <h3 class="project-title">Portfolio Website</h3>
+                <p class="project-description">Este mismo portafolio — diseñado y construido desde cero con HTML, CSS y JS. Totalmente responsive y con microinteracciones.</p>
+                <div class="project-tech">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                </div>
+                <hr class="project-divider">
+                <a href="#" class="project-link">View project →</a>
+            </div>
+        </div>
+
+        <!-- Proyecto 5: Frontend (TaskFlow Manager) -->
+        <div class="project-card" data-category="frontend">
+            <div class="project-image">
+                <i class="fas fa-tasks"></i>
+            </div>
+            <div class="project-content">
+                <div class="project-badge frontend-badge">FRONTEND</div>
+                <h3 class="project-title">TaskFlow Manager</h3>
+                <p class="project-description">Aplicación de gestión de tareas con drag & drop, almacenamiento local y modo oscuro. SPA con componentes reutilizables.</p>
+                <div class="project-tech">
+                    <span>React</span>
+                    <span>CSS Modules</span>
+                    <span>LocalStorage</span>
+                </div>
+                <hr class="project-divider">
+                <a href="#" class="project-link">View project →</a>
+            </div>
+        </div>
+
+        <!-- Proyecto 6: Frontend (Analytics Dashboard UI) -->
+        <div class="project-card" data-category="frontend">
+            <div class="project-image">
+                <i class="fas fa-chart-simple"></i>
+            </div>
+            <div class="project-content">
+                <div class="project-badge frontend-badge">FRONTEND</div>
+                <h3 class="project-title">Analytics Dashboard UI</h3>
+                <p class="project-description">Maqueta interactiva de dashboard con gráficos dinámicos (Chart.js) y diseño centrado en UX para datos empresariales.</p>
+                <div class="project-tech">
+                    <span>Tailwind</span>
+                    <span>Chart.js</span>
+                    <span>Figma</span>
+                </div>
+                <hr class="project-divider">
+                <a href="#" class="project-link">View project →</a>
+            </div>
+        </div>
+    </div>
     </section>
 
     <div class="section-divider">

@@ -1310,4 +1310,54 @@ html {
         }
         .contact-placeholder {
             opacity: 0.7;
-        }
+        } 
+        /* Project badge (esquina superior izquierda) */
+.project-badge {
+    position: relative;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    width: fit-content;
+    text-transform: uppercase;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+}
+
+.data-badge {
+    color: #a78bfa;
+    border-left: 3px solid #7c3aed;
+    background: rgba(124,58,237,0.12);
+}
+
+.frontend-badge {
+    color: #5eead4;
+    border-left: 3px solid #14b8a6;
+    background: rgba(20,184,166,0.12);
+}
+
+/* Línea divisoria casi imperceptible antes del enlace */
+.project-divider {
+    margin: 1rem 0 0.8rem 0;
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(139,92,246,0.2), rgba(139,92,246,0.02), transparent);
+    width: 100%;
+}
+
+/* Ajuste del enlace para que no tenga margen extra */
+.project-link {
+    margin-top: 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #a78bfa;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.2s;
+    width: fit-content;
+}
