@@ -736,15 +736,220 @@ body {
   .comment-bubble { border-top-left-radius: 24px; }
   .comment-bubble::before { display: none; }
 }
-.section-divider-animated {
-  width: 0;
-  height: 1px;
-  background: linear-gradient(90deg, #a78bfa, #5eead4);
-  border: none;
-  margin: 4rem auto;
-  transition: width 1s ease;
+
+/* ================================================================
+   DIVISOR ENTRE SECCIONES
+   Línea con punto morado brillante en el centro.
+   100% responsivo — se adapta a cualquier ancho.
+================================================================ */
+
+.section-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2.5rem;
+    margin: 1rem auto;
+    max-width: 1100px;
+    width: 100%;
 }
 
-.section-divider-animated.aos-animate {
-  width: 80%;
+/* Líneas a cada lado — gradiente que desaparece hacia los extremos */
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3));
+}
+
+/* La segunda línea va en dirección contraria */
+.section-divider .divider-line:last-child {
+    background: linear-gradient(90deg, rgba(139,92,246,0.3), transparent);
+}
+
+/* Punto brillante en el centro */
+.divider-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #7c3aed;
+    box-shadow: 0 0 10px rgba(124,58,237,0.8), 0 0 20px rgba(124,58,237,0.3);
+    flex-shrink: 0;
+}
+
+/* Responsive: en móvil reduce el padding */
+@media (max-width: 600px) {
+    .section-divider {
+        padding: 0 1.5rem;
+    }
+}
+
+/* ================================================================
+   EDUCATION SECTION
+================================================================ */
+
+.edu-section {
+  padding: 5rem 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.edu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.edu-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+}
+
+/* Línea vertical del timeline */
+.edu-timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.edu-timeline::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: linear-gradient(180deg, #7c3aed, rgba(139,92,246,0.05));
+}
+
+.edu-item {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.edu-item:last-child { padding-bottom: 0; }
+
+/* Punto en la línea del tiempo */
+.edu-dot {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: #0b0b0f;
+  border: 1.5px solid rgba(139,92,246,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s;
+  font-size: 15px;
+}
+
+.edu-item:hover .edu-dot {
+  border-color: #7c3aed;
+  box-shadow: 0 0 12px rgba(124,58,237,0.3);
+}
+
+/* Tarjeta de cada entrada */
+.edu-content {
+  flex: 1;
+  background: rgba(20,20,38,0.6);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.edu-item:hover .edu-content {
+  border-color: rgba(139,92,246,0.2);
+  transform: translateX(4px);
+}
+
+.edu-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.edu-info { display: flex; flex-direction: column; gap: 4px; }
+
+.edu-degree {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.edu-institution {
+  font-size: 13px;
+  color: #a78bfa;
+}
+
+.edu-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.edu-year {
+  font-size: 12px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* Badges */
+.edu-badge {
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge-degree { background: rgba(139,92,246,0.1); color: #a78bfa; border: 1px solid rgba(139,92,246,0.2); }
+.badge-cert   { background: rgba(20,184,166,0.08); color: #5eead4; border: 1px solid rgba(20,184,166,0.2); }
+.badge-course { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.35); border: 1px solid rgba(255,255,255,0.08); }
+
+/* Link al certificado */
+.edu-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(139,92,246,0.6);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+  width: fit-content;
+}
+
+.edu-link:hover { color: #a78bfa; }
+
+.edu-link svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .edu-section { padding: 4rem 1.5rem; }
+  .edu-top { flex-direction: column; }
+  .edu-right { align-items: flex-start; }
+  .edu-title { font-size: 2.2rem; }
 }
