@@ -661,7 +661,7 @@ body {
 .comment-bubble::before {
   content: '';
   position: absolute;
-  left: -10px;
+  left: -18px;
   top: 20px;
   border: 8px solid transparent;
   border-right-color: rgba(139,92,246,0.2);
@@ -735,4 +735,16 @@ body {
   .conversation-block { flex-direction: column; align-items: center; }
   .comment-bubble { border-top-left-radius: 24px; }
   .comment-bubble::before { display: none; }
+}
+.section-divider-animated {
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #a78bfa, #5eead4);
+  border: none;
+  margin: 4rem auto;
+  transition: width 1s ease;
+}
+
+.section-divider-animated.aos-animate {
+  width: 80%;
 }
