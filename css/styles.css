@@ -956,3 +956,187 @@ html {
   .edu-right { align-items: flex-start; }
   .edu-title { font-size: 2.2rem; }
 }
+
+/* ================================================================
+   TECHNOLOGIES SECTION
+   Dos columnas con círculos de progreso animados en SVG.
+   Morado para Data, verde azulado para Frontend.
+================================================================ */
+
+.tech-section {
+  padding: 3rem 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.tech-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.tech-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+}
+
+.tech-title span {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(139,92,246,0.6);
+}
+
+/* Grid de dos columnas con divisor en el medio */
+.tech-columns {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Línea vertical que separa las dos columnas */
+.tech-col-divider {
+  background: rgba(255,255,255,0.05);
+  height: 100%;
+  min-height: 400px;
+}
+
+/* Etiqueta de cada grupo */
+.tech-group-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Línea decorativa que sale de la etiqueta hacia la derecha */
+.tech-group-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* Grid de 3 columnas dentro de cada grupo */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  justify-items: center;
+}
+
+/* Cada tecnología: círculo + nombre + nivel */
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: default;
+}
+
+/* Contenedor del círculo SVG */
+.tech-circle-wrap {
+  position: relative;
+  width: 76px;
+  height: 76px;
+}
+
+/*
+  El SVG está rotado -90deg para que el progreso
+  empiece desde arriba (como un reloj) en lugar de la derecha.
+*/
+.tech-circle-wrap svg {
+  transform: rotate(-90deg);
+  width: 76px;
+  height: 76px;
+}
+
+/* Círculo de fondo: siempre completo, color muy sutil */
+.circle-track {
+  fill: none;
+  stroke: rgba(255,255,255,0.06);
+  stroke-width: 3;
+}
+
+/*
+  Círculo de progreso: empieza en 201 (invisible) y el JS
+  lo anima hasta el valor correspondiente al porcentaje.
+  stroke-dasharray = circunferencia del círculo (2 * PI * 32 ≈ 201)
+*/
+.circle-progress {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;       /* extremos redondeados */
+  stroke-dasharray: 201;
+  stroke-dashoffset: 201;      /* empieza invisible */
+  transition: stroke-dashoffset 1.2s ease; /* animación suave */
+}
+
+/* Color morado para Data & Analytics */
+.circle-progress.data-color  { stroke: #7c3aed; }
+
+/* Color verde azulado para Frontend */
+.circle-progress.front-color { stroke: #14b8a6; }
+
+/* Ícono centrado dentro del círculo */
+.tech-icon-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+.tech-name {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.tech-level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.tech-percent {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.tech-label {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+
+/* Hover: nombre y porcentaje se iluminan */
+.tech-item:hover .tech-name    { color: #fff; }
+.tech-item:hover .tech-percent { color: #a78bfa; }
+
+/* Responsive: en móvil las columnas se apilan */
+@media (max-width: 768px) {
+  .tech-columns {
+    grid-template-columns: 1fr;
+  }
+  .tech-col-divider { display: none; }
+  .tech-grid { grid-template-columns: repeat(3, 1fr); }
+  .tech-title { font-size: 2.2rem; }
+}
