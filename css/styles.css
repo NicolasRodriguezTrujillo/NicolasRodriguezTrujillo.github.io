@@ -1361,3 +1361,55 @@ html {
     transition: gap 0.2s;
     width: fit-content;
 }
+.project-card {
+    position: relative;
+    overflow: hidden; /* opcional: si quieres redondear esquinas, el badge se mantiene dentro */
+}
+
+.project-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 5px 12px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    background: rgba(10, 10, 18, 0.85);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Syne', sans-serif;
+}
+
+.data-badge {
+    color: #a78bfa;
+    border-left: 3px solid #7c3aed;
+    background: rgba(124, 58, 237, 0.15);
+    backdrop-filter: blur(5px);
+}
+
+.frontend-badge {
+    color: #5eead4;
+    border-left: 3px solid #14b8a6;
+    background: rgba(20, 184, 166, 0.12);
+    backdrop-filter: blur(5px);
+}
+
+/* Ajuste por si la imagen tiene border-radius, el badge no se corta */
+.project-image {
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* Línea divisoria sutil antes del enlace */
+.project-divider {
+    margin: 1rem 0 0.8rem 0;
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.02), transparent);
+    width: 100%;
+}
