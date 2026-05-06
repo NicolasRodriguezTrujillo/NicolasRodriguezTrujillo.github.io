@@ -131,3 +131,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ejecutar el filtrado de proyectos
     initProjectsFilter();
 });
+
+/* Año automático en el footer */
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+/* Filtros de proyectos */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    /* Quito active de todos los botones */
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+
+    const filter = this.getAttribute('data-filter');
+
+    document.querySelectorAll('.project-card:not(.coming-soon)').forEach(card => {
+      if (filter === 'all' || card.getAttribute('data-category') === filter) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});

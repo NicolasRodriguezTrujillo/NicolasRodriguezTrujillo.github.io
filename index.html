@@ -602,142 +602,374 @@
          Cada proyecto muestra título, descripción, tecnologías y enlace.
          ============================================================ -->
     <section class="projects-section" id="projects">
-        <div class="projects-header">
-            <div class="hero-eyebrow">Projects</div>
-            <span class="section-num">04 / 05</span>
+
+  <div class="projects-header">
+    <div class="section-eyebrow">Projects</div>
+    <span class="section-num">04 / 05</span>
+  </div>
+
+  <h2 class="projects-title">My <span>Work</span></h2>
+
+  <!-- Filtros por categoría — el JS actualiza qué tarjetas se muestran -->
+  <div class="projects-filters">
+    <button class="filter-btn active" data-filter="all">All <span class="filter-count" id="count-all">6</span></button>
+    <button class="filter-btn" data-filter="data">Data & Analytics <span class="filter-count" id="count-data">3</span></button>
+    <button class="filter-btn" data-filter="frontend">Frontend <span class="filter-count" id="count-frontend">3</span></button>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- ======================================================
+         PROYECTOS DATA
+    ====================================================== -->
+
+    <!-- Proyecto Data 1 -->
+    <div class="project-card" data-category="data">
+      <div class="project-visual visual-data-1">
+        <!-- Cuando tengas imagen: reemplaza el div por <img src="img/proyecto1.png" alt="Sales Dashboard"> -->
+        <span class="project-visual-icon">📊</span>
+        <span class="project-badge data-badge">Data</span>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Sales Dashboard Analysis</h3>
+        <p class="project-description">Análisis exploratorio de ventas con visualizaciones interactivas y KPIs clave por región y categoría.</p>
+        <div class="project-tech">
+          <span>Python</span><span>Pandas</span><span>Power BI</span>
         </div>
-
-        <h2 class="tech-title">My <span>Work</span></h2>
-
-        <!-- Filtros: muestran cantidad de proyectos por categoría (se actualizan por JS) -->
-        <div class="projects-filters">
-        <button class="filter-btn active" data-filter="all">All <span class="filter-count" id="count-all">0</span></button>
-        <button class="filter-btn" data-filter="data">Data & Analytics <span class="filter-count" id="count-data">0</span></button>
-        <button class="filter-btn" data-filter="frontend">Frontend <span class="filter-count" id="count-frontend">0</span></button>
+      </div>
+      <div class="project-footer">
+        <a href="#" class="project-link" target="_blank">View project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="project-github" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          GitHub
+        </a>
+      </div>
     </div>
 
-    <div class="projects-grid">
-        <!-- Proyecto 1: Data -->
-        <div class="project-card" data-category="data">
-            <div class="project-badge data-badge">DATA</div>
-            <div class="project-image">
-                <i class="fas fa-chart-line"></i>
-            </div>
-            <div class="project-content">
-                <h3 class="project-title">Sales Dashboard Analysis</h3>
-                <p class="project-description">Análisis exploratorio de ventas con visualizaciones interactivas y KPIs clave. Panel que revela tendencias por región y categoría.</p>
-                <div class="project-tech">
-                    <span>Python</span>
-                    <span>Pandas</span>
-                    <span>Power BI</span>
-                </div>
-                <hr class="project-divider">
-                <a href="#" class="project-link">View project →</a>
-            </div>
+    <!-- Proyecto Data 2 -->
+    <div class="project-card" data-category="data">
+      <div class="project-visual visual-data-2">
+        <span class="project-visual-icon">👥</span>
+        <span class="project-badge data-badge">Data</span>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Customer Churn Prediction</h3>
+        <p class="project-description">Modelo predictivo de cancelación de clientes usando regresión logística y random forest.</p>
+        <div class="project-tech">
+          <span>Python</span><span>Scikit-learn</span><span>Tableau</span>
         </div>
-
-        <!-- Proyecto 2: Data -->
-        <div class="project-card" data-category="data">
-            <div class="project-badge data-badge">DATA</div>
-            <div class="project-image">
-                <i class="fas fa-users"></i>
-            </div>
-          <div class="project-content">
-                <h3 class="project-title">Customer Churn Prediction</h3>
-                <p class="project-description">Modelo predictivo de cancelación de clientes usando regresión logística y random forest. Dashboard con segmentación de riesgo.</p>
-                <div class="project-tech">
-                    <span>Python</span>
-                    <span>Scikit-learn</span>
-                    <span>Tableau</span>
-                </div>
-                <hr class="project-divider">
-                <a href="#" class="project-link">View project →</a>
-            </div>
-        </div>
-
-        <!-- Proyecto 3: Data -->
-        <div class="project-card" data-category="data">
-            <div class="project-badge data-badge">DATA</div>
-            <div class="project-image">
-                <i class="fas fa-coins"></i>
-            </div>
-          <div class="project-content">
-                <h3 class="project-title">Financial KPI Tracker</h3>
-                <p class="project-description">Automatización de métricas financieras, ETL en Python y dashboard interactivo en Power BI para toma de decisiones.</p>
-                <div class="project-tech">
-                    <span>SQL</span>
-                    <span>Power BI</span>
-                    <span>DAX</span>
-                </div>
-                <hr class="project-divider">
-                <a href="#" class="project-link">View project →</a>
-            </div>
-        </div>
-
-        <!-- Proyecto 4: Frontend -->
-        <div class="project-card" data-category="frontend">
-            <div class="project-badge frontend-badge">FRONTEND</div>
-            <div class="project-image">
-                <i class="fas fa-code"></i>
-            </div>
-          <div class="project-content">
-                <h3 class="project-title">Portfolio Website</h3>
-                <p class="project-description">Este mismo portafolio — diseñado y construido desde cero con HTML, CSS y JS. Totalmente responsive y con microinteracciones.</p>
-                <div class="project-tech">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
-                </div>
-                <hr class="project-divider">
-                <a href="#" class="project-link">View project →</a>
-            </div>
-        </div>
-
-        <!-- Proyecto 5: Frontend -->
-        <div class="project-card" data-category="frontend">
-            <div class="project-badge frontend-badge">FRONTEND</div>
-            <div class="project-image">
-                <i class="fas fa-tasks"></i>
-            </div>
-          <div class="project-content">
-                <h3 class="project-title">TaskFlow Manager</h3>
-                <p class="project-description">Aplicación de gestión de tareas con drag & drop, almacenamiento local y modo oscuro. SPA con componentes reutilizables.</p>
-                <div class="project-tech">
-                    <span>React</span>
-                    <span>CSS Modules</span>
-                    <span>LocalStorage</span>
-                </div>
-                <hr class="project-divider">
-                <a href="#" class="project-link">View project →</a>
-            </div>
-        </div>
-
-        <!-- Proyecto 6: Frontend -->
-        <div class="project-card" data-category="frontend">
-            <div class="project-badge frontend-badge">FRONTEND</div>
-            <div class="project-image">
-                <i class="fas fa-chart-simple"></i>
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">Analytics Dashboard UI</h3>
-                <p class="project-description">Maqueta interactiva de dashboard con gráficos dinámicos (Chart.js) y diseño centrado en UX para datos empresariales.</p>
-                <div class="project-tech">
-                    <span>Tailwind</span>
-                    <span>Chart.js</span>
-                    <span>Figma</span>
-                </div>
-                <hr class="project-divider">
-                <a href="#" class="project-link">View project →</a>
-            </div>
-        </div>
+      </div>
+      <div class="project-footer">
+        <a href="#" class="project-link" target="_blank">View project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="project-github" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          GitHub
+        </a>
+      </div>
     </div>
-    </section>
 
+    <!-- Proyecto Data 3 -->
+    <div class="project-card" data-category="data">
+      <div class="project-visual visual-data-3">
+        <span class="project-visual-icon">💰</span>
+        <span class="project-badge data-badge">Data</span>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Financial KPI Tracker</h3>
+        <p class="project-description">Automatización de métricas financieras, ETL en Python y dashboard interactivo en Power BI.</p>
+        <div class="project-tech">
+          <span>SQL</span><span>Power BI</span><span>DAX</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <a href="#" class="project-link" target="_blank">View project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="project-github" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         PROYECTOS FRONTEND
+    ====================================================== -->
+
+    <!-- Proyecto Frontend 1 -->
+    <div class="project-card" data-category="frontend">
+      <div class="project-visual visual-front-1">
+        <span class="project-visual-icon">🌐</span>
+        <span class="project-badge frontend-badge">Frontend</span>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Portfolio Website</h3>
+        <p class="project-description">Este mismo portafolio — diseñado y construido desde cero con HTML, CSS y JS. Totalmente responsive.</p>
+        <div class="project-tech">
+          <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <a href="#" class="project-link" target="_blank">View project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="project-github" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Proyecto Frontend 2 -->
+    <div class="project-card" data-category="frontend">
+      <div class="project-visual visual-front-2">
+        <span class="project-visual-icon">✅</span>
+        <span class="project-badge frontend-badge">Frontend</span>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">TaskFlow Manager</h3>
+        <p class="project-description">Aplicación de gestión de tareas con drag & drop, almacenamiento local y modo oscuro.</p>
+        <div class="project-tech">
+          <span>React</span><span>CSS Modules</span><span>LocalStorage</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <a href="#" class="project-link" target="_blank">View project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="project-github" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Proyecto Frontend 3 -->
+    <div class="project-card" data-category="frontend">
+      <div class="project-visual visual-front-3">
+        <span class="project-visual-icon">📱</span>
+        <span class="project-badge frontend-badge">Frontend</span>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Analytics Dashboard UI</h3>
+        <p class="project-description">Maqueta interactiva de dashboard con gráficos dinámicos y diseño centrado en UX.</p>
+        <div class="project-tech">
+          <span>Tailwind</span><span>Chart.js</span><span>Figma</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <a href="#" class="project-link" target="_blank">View project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#" class="project-github" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Coming soon — espacio para proyectos futuros -->
+    <div class="project-card coming-soon">
+      <div class="coming-soon-body"><span>🚧</span> Coming soon</div>
+    </div>
+    <div class="project-card coming-soon">
+      <div class="coming-soon-body"><span>🚧</span> Coming soon</div>
+    </div>
+    <div class="project-card coming-soon">
+      <div class="coming-soon-body"><span>🚧</span> Coming soon</div>
+    </div>
+
+  </div>
+</section>
     <div class="section-divider">
         <div class="divider-line"></div>
         <div class="divider-center"><div class="divider-dot"></div></div>
         <div class="divider-line"></div>
     </div>
+
+    <!-- ============================================================
+     CONTACT SECTION
+     Dos columnas: izquierda info de contacto, derecha formulario.
+     El formulario usa Formspree para enviar emails sin backend.
+============================================================ -->
+<section class="contact-section" id="contact">
+
+  <div class="contact-header">
+    <div class="section-eyebrow">Contact</div>
+    <span class="section-num">05 / 05</span>
+  </div>
+
+  <div class="contact-grid">
+
+    <!-- Columna izquierda: info -->
+    <div class="contact-left">
+      <h2 class="contact-title">Let's <span class="title-outline">Talk</span></h2>
+      <p class="contact-desc">
+        Whether you have a project in mind, want to collaborate, 
+        or just want to say hi — my inbox is always open.
+      </p>
+
+      <!-- Links de contacto directo -->
+      <div class="contact-links">
+
+        <a href="mailto:tu@email.com" class="contact-link-item">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <div class="contact-link-info">
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">tu@email.com</span>
+          </div>
+          <svg class="contact-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+        <a href="https://linkedin.com/in/tu-perfil" class="contact-link-item" target="_blank">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </div>
+          <div class="contact-link-info">
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-value">Nicolás Rodríguez</span>
+          </div>
+          <svg class="contact-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+        <a href="https://github.com/tu-usuario" class="contact-link-item" target="_blank">
+          <div class="contact-link-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+            </svg>
+          </div>
+          <div class="contact-link-info">
+            <span class="contact-link-label">GitHub</span>
+            <span class="contact-link-value">tu-usuario</span>
+          </div>
+          <svg class="contact-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Columna derecha: formulario -->
+    <div class="contact-right">
+      <!--
+        Para que el formulario funcione de verdad sin backend,
+        usa Formspree: ve a formspree.io, crea una cuenta gratis
+        y reemplaza YOUR_FORM_ID con tu ID.
+      -->
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="subject">Subject</label>
+          <input class="form-input" type="text" id="subject" name="subject" placeholder="What's this about?">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-input form-textarea" id="message" name="message" placeholder="Tell me about your project or idea..." required></textarea>
+        </div>
+
+        <button class="form-submit" type="submit">
+          Send message
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+          </svg>
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+<div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-center"><div class="divider-dot"></div></div>
+        <div class="divider-line"></div>
+    </div>
+<!-- ============================================================
+     FOOTER
+     Simple y limpio: logo, links de navegación y redes sociales.
+     El año se actualiza automáticamente con JS.
+============================================================ -->
+<footer class="footer">
+
+  <div class="footer-inner">
+
+    <!-- Logo y frase -->
+    <div class="footer-brand">
+      <span class="footer-logo">NR<span>.</span></span>
+      <p class="footer-tagline">Building from scratch, one line at a time.</p>
+    </div>
+
+    <!-- Links de navegación rápida -->
+    <nav class="footer-nav">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#technologies">Technologies</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Redes sociales -->
+    <div class="footer-socials">
+      <a href="https://linkedin.com/in/tu-perfil" target="_blank" title="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+      <a href="https://github.com/tu-usuario" target="_blank" title="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+        </svg>
+      </a>
+      <a href="mailto:tu@email.com" title="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Línea inferior con copyright -->
+  <div class="footer-bottom">
+    <span>© <span id="footer-year"></span> Nicolás Rodríguez. Built with HTML, CSS & JS.</span>
+    <span class="footer-status">
+      <span class="dot-green-sm"></span>
+      Available to work
+    </span>
+  </div>
+
+</footer>
     <!-- ============================================================
          SCRIPTS
          Los pongo al final del body para que la página cargue más rápido.
