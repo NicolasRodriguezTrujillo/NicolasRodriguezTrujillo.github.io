@@ -1368,56 +1368,35 @@ html {
 
 .project-badge {
     position: absolute;
-    top: 16px;
-    left: 16px;
+    top: 14px;
+    left: 14px;
     z-index: 20;
     font-family: 'Syne', sans-serif;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    padding: 6px 14px;
-    border-radius: 40px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    padding: 4px 12px;
+    border-radius: 100px;
     text-transform: uppercase;
     backdrop-filter: blur(8px);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
 }
 
 .data-badge {
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.35), rgba(139, 92, 246, 0.15));
+    background: rgba(124,58,237,0.2);
     color: #c4b5fd;
-    border: 1px solid rgba(139, 92, 246, 0.6);
-    text-shadow: 0 0 4px rgba(124, 58, 237, 0.5);
-}
-
-.data-badge::before {
-    content: "📊";
-    font-size: 10px;
-    font-weight: normal;
-    filter: drop-shadow(0 0 2px #7c3aed);
+    border: 1px solid rgba(139,92,246,0.4);
 }
 
 .frontend-badge {
-    background: linear-gradient(135deg, rgba(20, 184, 166, 0.35), rgba(45, 212, 191, 0.1));
+    background: rgba(20,184,166,0.2);
     color: #5eead4;
-    border: 1px solid rgba(20, 184, 166, 0.6);
-    text-shadow: 0 0 4px rgba(20, 184, 166, 0.5);
-}
-
-.frontend-badge::before {
-    content: "🖥️";
-    font-size: 10px;
-    font-weight: normal;
-    filter: drop-shadow(0 0 2px #14b8a6);
+    border: 1px solid rgba(20,184,166,0.4);
 }
 
 .project-card:hover .project-badge {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(12px);
 }
 
 /* Ajuste por si la imagen tiene border-radius, el badge no se corta */
