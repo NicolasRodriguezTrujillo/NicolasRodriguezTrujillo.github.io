@@ -21,15 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ===== ANIMACIÓN CÍRCULOS DE TECNOLOGÍAS =====
-    const circles = document.querySelectorAll('.circle-progress');
-    const circumference = 2 * Math.PI * 32;
-    circles.forEach(circle => {
-        const pct = parseFloat(circle.getAttribute('data-pct'));
-        const offset = circumference - (pct / 100) * circumference;
-        setTimeout(() => { circle.style.strokeDashoffset = offset; }, 300);
-    });
 
+    
     // ===== FILTRADO DE PROYECTOS (CON CONTADORES AUTOMÁTICOS) =====
     function initProjectsFilter() {
         const filterBtns = document.querySelectorAll('.filter-btn');
