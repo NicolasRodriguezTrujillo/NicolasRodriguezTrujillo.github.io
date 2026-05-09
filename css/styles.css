@@ -959,15 +959,21 @@ html {
 
 /* ================================================================
    TECHNOLOGIES SECTION
-   Dos columnas con círculos de progreso animados en SVG.
-   Morado para Data, verde azulado para Frontend.
+   Carrusel infinito con CSS puro.
+   Fila 1 va a la izquierda, fila 2 a la derecha.
+   Al hacer hover se pausa con animation-play-state: paused.
 ================================================================ */
 
 .tech-section {
-  padding: 3rem 2.5rem;
+  padding: 3rem 0;
+  width: 100%;
+  overflow: hidden; /* oculta lo que sale de los bordes */
+}
+
+.tech-inner {
   max-width: 1100px;
   margin: 0 auto;
-  width: 100%;
+  padding: 0 2.5rem;
 }
 
 .tech-header {
@@ -993,152 +999,285 @@ html {
   -webkit-text-stroke: 1.5px rgba(139,92,246,0.6);
 }
 
-/* Grid de dos columnas con divisor en el medio */
-.tech-columns {
-  display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  gap: 3rem;
-  align-items: start;
+/* Cada fila del carrusel */
+.carousel-row-wrap {
+  margin-bottom: 2rem;
 }
 
-/* Línea vertical que separa las dos columnas */
-.tech-col-divider {
-  background: rgba(255,255,255,0.05);
-  height: 100%;
-  min-height: 400px;
-}
-
-/* Etiqueta de cada grupo */
-.tech-group-label {
+.carousel-label {
   font-size: 10px;
   color: rgba(255,255,255,0.2);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  padding: 0 2.5rem;
+  margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-/* Línea decorativa que sale de la etiqueta hacia la derecha */
-.tech-group-label::after {
+.carousel-label::after {
   content: '';
   flex: 1;
   height: 1px;
   background: rgba(255,255,255,0.05);
 }
 
-/* Grid de 3 columnas dentro de cada grupo */
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
-  justify-items: center;
+/* Contenedor con fade en los bordes */
+.carousel-track-wrap {
+  position: relative;
 }
 
-/* Cada tecnología: círculo + nombre + nivel */
-.tech-item {
+/* Gradiente izquierdo — fade de entrada */
+.carousel-track-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 120px;
+  background: linear-gradient(90deg, #0b0b0f, transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Gradiente derecho — fade de salida */
+.carousel-track-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; right: 0;
+  width: 120px;
+  background: linear-gradient(90deg, transparent, #0b0b0f);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* El track que se mueve */
+.carousel-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  padding: 8px 0; /* espacio para el hover */
+}
+
+/* Fila 1: va hacia la izquierda */
+.carousel-track.left {
+  animation: scrollLeft 25s linear infinite;
+}
+
+/* Fila 2: va hacia la derecha */
+.carousel-track.right {
+  animation: scrollRight 30s linear infinite;
+}
+
+/* Al hacer hover sobre la fila, se pausa */
+.carousel-track-wrap:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Tarjeta de tecnología */
+.tech-card {
+  background: rgba(20,20,35,0.6);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1.1rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   cursor: default;
-}
-
-/* Contenedor del círculo SVG */
-.tech-circle-wrap {
+  transition: all 0.25s ease;
   position: relative;
-  width: 76px;
-  height: 76px;
+  overflow: hidden;
+  min-width: 100px;
+  flex-shrink: 0;
 }
 
-/*
-  El SVG está rotado -90deg para que el progreso
-  empiece desde arriba (como un reloj) en lugar de la derecha.
-*/
-.tech-circle-wrap svg {
-  transform: rotate(-90deg);
-  width: 76px;
-  height: 76px;
-}
-
-/* Círculo de fondo: siempre completo, color muy sutil */
-.circle-track {
-  fill: none;
-  stroke: rgba(255,255,255,0.06);
-  stroke-width: 3;
-}
-
-/*
-  Círculo de progreso: empieza en 201 (invisible) y el JS
-  lo anima hasta el valor correspondiente al porcentaje.
-  stroke-dasharray = circunferencia del círculo (2 * PI * 32 ≈ 201)
-*/
-.circle-progress {
-  fill: none;
-  stroke-width: 3;
-  stroke-linecap: round;       /* extremos redondeados */
-  stroke-dasharray: 201;
-  stroke-dashoffset: 201;      /* empieza invisible */
-  transition: stroke-dashoffset 1.2s ease; /* animación suave */
-}
-
-/* Color morado para Data & Analytics */
-.circle-progress.data-color  { stroke: #7c3aed; }
-
-/* Color verde azulado para Frontend */
-.circle-progress.front-color { stroke: #14b8a6; }
-
-/* Ícono centrado dentro del círculo */
-.tech-icon-inner {
+/* Brillo de color en hover */
+.tech-card::before {
+  content: '';
   position: absolute;
   inset: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border-radius: 12px;
+}
+
+.tech-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.tech-card:hover::before { opacity: 1; }
+
+/* Color único por tecnología */
+.tech-card[data-color="python"]::before     { background: radial-gradient(ellipse at 50% 100%, rgba(55,118,171,0.2), transparent 70%); }
+.tech-card[data-color="sql"]::before        { background: radial-gradient(ellipse at 50% 100%, rgba(0,116,186,0.2), transparent 70%); }
+.tech-card[data-color="postgresql"]::before { background: radial-gradient(ellipse at 50% 100%, rgba(51,103,145,0.2), transparent 70%); }
+.tech-card[data-color="mongodb"]::before    { background: radial-gradient(ellipse at 50% 100%, rgba(71,162,72,0.2), transparent 70%); }
+.tech-card[data-color="pandas"]::before     { background: radial-gradient(ellipse at 50% 100%, rgba(139,92,246,0.2), transparent 70%); }
+.tech-card[data-color="numpy"]::before      { background: radial-gradient(ellipse at 50% 100%, rgba(74,144,226,0.2), transparent 70%); }
+.tech-card[data-color="powerbi"]::before    { background: radial-gradient(ellipse at 50% 100%, rgba(243,172,34,0.2), transparent 70%); }
+.tech-card[data-color="excel"]::before      { background: radial-gradient(ellipse at 50% 100%, rgba(33,115,70,0.2), transparent 70%); }
+.tech-card[data-color="tableau"]::before    { background: radial-gradient(ellipse at 50% 100%, rgba(31,119,180,0.2), transparent 70%); }
+.tech-card[data-color="html"]::before       { background: radial-gradient(ellipse at 50% 100%, rgba(228,77,38,0.2), transparent 70%); }
+.tech-card[data-color="css"]::before        { background: radial-gradient(ellipse at 50% 100%, rgba(38,77,228,0.2), transparent 70%); }
+.tech-card[data-color="js"]::before         { background: radial-gradient(ellipse at 50% 100%, rgba(240,219,79,0.2), transparent 70%); }
+.tech-card[data-color="angular"]::before    { background: radial-gradient(ellipse at 50% 100%, rgba(221,0,49,0.2), transparent 70%); }
+.tech-card[data-color="react"]::before      { background: radial-gradient(ellipse at 50% 100%, rgba(97,218,251,0.2), transparent 70%); }
+
+.tech-card img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.25s ease;
+}
+
+.tech-card:hover img { transform: scale(1.15); }
+
+.tech-card-name {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.03em;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.tech-card:hover .tech-card-name { color: rgba(255,255,255,0.9); }
+
+/* ================================================================
+   CURRENTLY LEARNING
+================================================================ */
+
+.learning-section {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 3rem 2.5rem 0;
+  margin-top: 2rem;
+}
+
+.learning-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.learning-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,200,0,0.7);
+  box-shadow: 0 0 8px rgba(255,200,0,0.4);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+.learning-label {
+  font-size: 10px;
+  color: rgba(255,200,0,0.45);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.learning-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,200,0,0.06);
+}
+
+.learning-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.learning-card {
+  background: rgba(20,20,35,0.4);
+  border: 1px dashed rgba(255,200,0,0.12);
+  border-radius: 12px;
+  padding: 1.1rem 1.5rem;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: default;
+  transition: all 0.25s ease;
+}
+
+.learning-card:hover {
+  border-color: rgba(255,200,0,0.3);
+  transform: translateY(-3px);
+  background: rgba(255,200,0,0.04);
+}
+
+.learning-card img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: all 0.25s;
+}
+
+.learning-card:hover img { opacity: 1; transform: scale(1.1); }
+
+.learning-card-name {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  text-align: center;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.learning-card:hover .learning-card-name { color: rgba(255,200,0,0.7); }
+
+.learning-placeholder {
+  min-width: 100px;
+  background: transparent;
+  border: 1px dashed rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.placeholder-circle {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255,255,255,0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
+  font-size: 16px;
+  color: rgba(255,255,255,0.08);
 }
 
-.tech-name {
-  font-size: 11px;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.03em;
+.placeholder-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.08);
   text-align: center;
 }
 
-.tech-level {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1px;
-}
-
-.tech-percent {
-  font-family: 'Syne', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.tech-label {
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.2);
-}
-
-/* Hover: nombre y porcentaje se iluminan */
-.tech-item:hover .tech-name    { color: #fff; }
-.tech-item:hover .tech-percent { color: #a78bfa; }
-
-/* Responsive: en móvil las columnas se apilan */
+/* Responsive */
 @media (max-width: 768px) {
-  .tech-columns {
-    grid-template-columns: 1fr;
-  }
-  .tech-col-divider { display: none; }
-  .tech-grid { grid-template-columns: repeat(3, 1fr); }
   .tech-title { font-size: 2.2rem; }
+  .carousel-track-wrap::before,
+  .carousel-track-wrap::after { width: 60px; }
+  .learning-section { padding: 3rem 1.5rem 0; }
 }
 
 /* ================================================================

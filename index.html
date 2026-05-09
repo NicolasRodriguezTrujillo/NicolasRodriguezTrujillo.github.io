@@ -326,264 +326,120 @@
 </div>
 <!-- ============================================================
      TECHNOLOGIES SECTION
-     Dos columnas: Data & Analytics a la izquierda, Frontend a la derecha.
-     Cada tecnología tiene un círculo de progreso animado con SVG,
-     el porcentaje y el nivel de dominio debajo.
+     Carrusel infinito: fila 1 va a la izquierda, fila 2 a la derecha.
+     Al hacer hover sobre cada fila se pausa la animación.
+     Los íconos son reales usando devicons y icons8.
 ============================================================ -->
 <section class="tech-section" id="technologies">
 
-  <div class="tech-header">
-    <div class="hero-eyebrow">Technologies</div>
-    <span class="section-num">03 / 05</span>
+  <div class="tech-inner">
+    <div class="tech-header">
+      <div class="section-eyebrow">Technologies</div>
+      <span class="section-num">03 / 05</span>
+    </div>
+    <h2 class="tech-title">My <span>Stack</span></h2>
   </div>
 
-  <h2 class="tech-title">My <span>Stacks</span></h2>
+  <!-- Fila 1: Data & Analytics — se mueve hacia la izquierda -->
+  <div class="carousel-row-wrap">
+    <div class="carousel-label">Data & Analytics</div>
+    <div class="carousel-track-wrap">
+      <div class="carousel-track left">
 
-  <!-- Contenedor de dos columnas -->
-  <div class="tech-columns">
+        <!-- Set original -->
+        <div class="tech-card" data-color="python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span class="tech-card-name">Python</span></div>
+        <div class="tech-card" data-color="sql"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><span class="tech-card-name">SQL</span></div>
+        <div class="tech-card" data-color="postgresql"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"><span class="tech-card-name">PostgreSQL</span></div>
+        <div class="tech-card" data-color="mongodb"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span class="tech-card-name">MongoDB</span></div>
+        <div class="tech-card" data-color="pandas"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span class="tech-card-name">Pandas</span></div>
+        <div class="tech-card" data-color="numpy"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span class="tech-card-name">NumPy</span></div>
+        <div class="tech-card" data-color="powerbi"><img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI"><span class="tech-card-name">Power BI</span></div>
+        <div class="tech-card" data-color="excel"><img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel"><span class="tech-card-name">Excel</span></div>
+        <div class="tech-card" data-color="tableau"><img src="https://img.icons8.com/color/48/tableau-software.png" alt="Tableau"><span class="tech-card-name">Tableau</span></div>
 
-    <!-- ======================================================
-         COLUMNA IZQUIERDA: Data & Analytics
-    ====================================================== -->
-    <div class="tech-col">
-      <div class="tech-group-label">Data & Analytics</div>
-      <div class="tech-grid">
-
-        <!-- 
-          Cada .tech-item tiene:
-          - Un SVG con dos círculos: el de fondo (.circle-track) y el de progreso (.circle-progress)
-          - data-pct="70" le dice al JS cuánto debe animarse el círculo
-          - El ícono flotando en el centro con .tech-icon-inner
-          - El nombre, porcentaje y nivel debajo
-        -->
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress data-color" cx="40" cy="40" r="32" data-pct="70"/>
-            </svg>
-            <div class="tech-icon-inner">🐍</div>
-          </div>
-          <span class="tech-name">Python</span>
-          <div class="tech-level">
-            <span class="tech-percent">70%</span>
-            <span class="tech-label">Intermediate</span>
-          </div>
-        </div>
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress data-color" cx="40" cy="40" r="32" data-pct="65"/>
-            </svg>
-            <div class="tech-icon-inner">🗄️</div>
-          </div>
-          <span class="tech-name">SQL</span>
-          <div class="tech-level">
-            <span class="tech-percent">65%</span>
-            <span class="tech-label">Intermediate</span>
-          </div>
-        </div>
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress data-color" cx="40" cy="40" r="32" data-pct="55"/>
-            </svg>
-            <div class="tech-icon-inner">🐘</div>
-          </div>
-          <span class="tech-name">PostgreSQL</span>
-          <div class="tech-level">
-            <span class="tech-percent">55%</span>
-            <span class="tech-label">Beginner</span>
-          </div>
-        </div>
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress data-color" cx="40" cy="40" r="32" data-pct="50"/>
-            </svg>
-            <div class="tech-icon-inner">🍃</div>
-          </div>
-          <span class="tech-name">MongoDB</span>
-          <div class="tech-level">
-            <span class="tech-percent">50%</span>
-            <span class="tech-label">Beginner</span>
-          </div>
-        </div>
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress data-color" cx="40" cy="40" r="32" data-pct="60"/>
-            </svg>
-            <div class="tech-icon-inner">📊</div>
-          </div>
-          <span class="tech-name">Power BI</span>
-          <div class="tech-level">
-            <span class="tech-percent">60%</span>
-            <span class="tech-label">Intermediate</span>
-          </div>
-        </div>
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress data-color" cx="40" cy="40" r="32" data-pct="55"/>
-            </svg>
-            <div class="tech-icon-inner">📈</div>
-          </div>
-          <span class="tech-name">Tableau</span>
-          <div class="tech-level">
-            <span class="tech-percent">55%</span>
-            <span class="tech-label">Beginner</span>
-          </div>
-        </div>
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress data-color" cx="40" cy="40" r="32" data-pct="80"/>
-            </svg>
-            <div class="tech-icon-inner">📗</div>
-          </div>
-          <span class="tech-name">Excel</span>
-          <div class="tech-level">
-            <span class="tech-percent">80%</span>
-            <span class="tech-label">Advanced</span>
-          </div>
-        </div>
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress data-color" cx="40" cy="40" r="32" data-pct="65"/>
-            </svg>
-            <div class="tech-icon-inner">🐼</div>
-          </div>
-          <span class="tech-name">Pandas</span>
-          <div class="tech-level">
-            <span class="tech-percent">65%</span>
-            <span class="tech-label">Intermediate</span>
-          </div>
-        </div>
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress data-color" cx="40" cy="40" r="32" data-pct="60"/>
-            </svg>
-            <div class="tech-icon-inner">🔢</div>
-          </div>
-          <span class="tech-name">NumPy</span>
-          <div class="tech-level">
-            <span class="tech-percent">60%</span>
-            <span class="tech-label">Intermediate</span>
-          </div>
-        </div>
+        <!-- Duplicado para el loop infinito -->
+        <div class="tech-card" data-color="python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span class="tech-card-name">Python</span></div>
+        <div class="tech-card" data-color="sql"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><span class="tech-card-name">SQL</span></div>
+        <div class="tech-card" data-color="postgresql"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"><span class="tech-card-name">PostgreSQL</span></div>
+        <div class="tech-card" data-color="mongodb"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span class="tech-card-name">MongoDB</span></div>
+        <div class="tech-card" data-color="pandas"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span class="tech-card-name">Pandas</span></div>
+        <div class="tech-card" data-color="numpy"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span class="tech-card-name">NumPy</span></div>
+        <div class="tech-card" data-color="powerbi"><img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI"><span class="tech-card-name">Power BI</span></div>
+        <div class="tech-card" data-color="excel"><img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel"><span class="tech-card-name">Excel</span></div>
+        <div class="tech-card" data-color="tableau"><img src="https://img.icons8.com/color/48/tableau-software.png" alt="Tableau"><span class="tech-card-name">Tableau</span></div>
 
       </div>
     </div>
+  </div>
 
-    <!-- Divisor vertical entre columnas -->
-    <div class="tech-col-divider"></div>
+  <!-- Fila 2: Frontend — se mueve hacia la derecha -->
+  <div class="carousel-row-wrap">
+    <div class="carousel-label">Frontend</div>
+    <div class="carousel-track-wrap">
+      <div class="carousel-track right">
 
-    <!-- ======================================================
-         COLUMNA DERECHA: Frontend
-    ====================================================== -->
-    <div class="tech-col">
-      <div class="tech-group-label">Frontend</div>
-      <div class="tech-grid">
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress front-color" cx="40" cy="40" r="32" data-pct="80"/>
-            </svg>
-            <div class="tech-icon-inner">🌐</div>
-          </div>
-          <span class="tech-name">HTML</span>
-          <div class="tech-level">
-            <span class="tech-percent">80%</span>
-            <span class="tech-label">Advanced</span>
-          </div>
-        </div>
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress front-color" cx="40" cy="40" r="32" data-pct="75"/>
-            </svg>
-            <div class="tech-icon-inner">🎨</div>
-          </div>
-          <span class="tech-name">CSS</span>
-          <div class="tech-level">
-            <span class="tech-percent">75%</span>
-            <span class="tech-label">Intermediate</span>
-          </div>
-        </div>
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress front-color" cx="40" cy="40" r="32" data-pct="55"/>
-            </svg>
-            <div class="tech-icon-inner">⚡</div>
-          </div>
-          <span class="tech-name">JavaScript</span>
-          <div class="tech-level">
-            <span class="tech-percent">55%</span>
-            <span class="tech-label">Beginner</span>
-          </div>
-        </div>
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress front-color" cx="40" cy="40" r="32" data-pct="45"/>
-            </svg>
-            <div class="tech-icon-inner">🔴</div>
-          </div>
-          <span class="tech-name">Angular</span>
-          <div class="tech-level">
-            <span class="tech-percent">45%</span>
-            <span class="tech-label">Beginner</span>
-          </div>
-        </div>
-
-        <div class="tech-item">
-          <div class="tech-circle-wrap">
-            <svg viewBox="0 0 80 80">
-              <circle class="circle-track" cx="40" cy="40" r="32"/>
-              <circle class="circle-progress front-color" cx="40" cy="40" r="32" data-pct="40"/>
-            </svg>
-            <div class="tech-icon-inner">⚛️</div>
-          </div>
-          <span class="tech-name">React</span>
-          <div class="tech-level">
-            <span class="tech-percent">40%</span>
-            <span class="tech-label">Beginner</span>
-          </div>
-        </div>
+        <!-- Set original + duplicados para llenar pantalla -->
+        <div class="tech-card" data-color="html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><span class="tech-card-name">HTML</span></div>
+        <div class="tech-card" data-color="css"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><span class="tech-card-name">CSS</span></div>
+        <div class="tech-card" data-color="js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span class="tech-card-name">JavaScript</span></div>
+        <div class="tech-card" data-color="angular"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular"><span class="tech-card-name">Angular</span></div>
+        <div class="tech-card" data-color="react"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span class="tech-card-name">React</span></div>
+        <div class="tech-card" data-color="html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><span class="tech-card-name">HTML</span></div>
+        <div class="tech-card" data-color="css"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><span class="tech-card-name">CSS</span></div>
+        <div class="tech-card" data-color="js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span class="tech-card-name">JavaScript</span></div>
+        <div class="tech-card" data-color="angular"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular"><span class="tech-card-name">Angular</span></div>
+        <div class="tech-card" data-color="react"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span class="tech-card-name">React</span></div>
+        <div class="tech-card" data-color="html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><span class="tech-card-name">HTML</span></div>
+        <div class="tech-card" data-color="css"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><span class="tech-card-name">CSS</span></div>
+        <div class="tech-card" data-color="js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span class="tech-card-name">JavaScript</span></div>
+        <div class="tech-card" data-color="angular"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular"><span class="tech-card-name">Angular</span></div>
+        <div class="tech-card" data-color="react"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span class="tech-card-name">React</span></div>
+        <div class="tech-card" data-color="html"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><span class="tech-card-name">HTML</span></div>
+        <div class="tech-card" data-color="css"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><span class="tech-card-name">CSS</span></div>
+        <div class="tech-card" data-color="js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span class="tech-card-name">JavaScript</span></div>
+        <div class="tech-card" data-color="angular"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular"><span class="tech-card-name">Angular</span></div>
+        <div class="tech-card" data-color="react"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span class="tech-card-name">React</span></div>
 
       </div>
     </div>
-
   </div>
+
+  <!-- Currently Learning -->
+  <div class="learning-section">
+    <div class="learning-header">
+      <div class="learning-dot"></div>
+      <span class="learning-label">Currently Learning</span>
+      <div class="learning-line"></div>
+    </div>
+    <div class="learning-grid">
+
+      <!-- Reemplaza src y nombre con tus tecnologías -->
+      <div class="learning-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Tech">
+        <span class="learning-card-name">Tu tech</span>
+      </div>
+      <div class="learning-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Tech">
+        <span class="learning-card-name">Tu tech</span>
+      </div>
+      <div class="learning-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Tech">
+        <span class="learning-card-name">Tu tech</span>
+      </div>
+
+      <!-- Placeholders para futuras tecnologías -->
+      <div class="learning-placeholder">
+        <div class="placeholder-circle">+</div>
+        <span class="placeholder-label">Soon</span>
+      </div>
+      <div class="learning-placeholder">
+        <div class="placeholder-circle">+</div>
+        <span class="placeholder-label">Soon</span>
+      </div>
+
+    </div>
+  </div>
+
 </section>
 <div class="section-divider">
     <div class="divider-line"></div>
@@ -921,7 +777,7 @@
 
     <!-- Logo y frase -->
     <div class="footer-brand">
-      <span class="footer-logo">NR<span>.</span></span>
+      <span class="footer-logo">NR<span>.</span></span>cv 
     </div>
 
     <!-- Links de navegación rápida -->
