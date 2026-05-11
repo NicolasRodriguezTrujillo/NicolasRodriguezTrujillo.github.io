@@ -968,6 +968,8 @@ html {
   padding: 3rem 0;
   width: 100%;
   overflow: hidden; /* oculta lo que sale de los bordes */
+  max-width: 1100px;  
+  margin: 0 auto;
 }
 
 .tech-inner {
