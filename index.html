@@ -93,75 +93,94 @@
     </div>
 
 
-    <!-- ============================================================
-         HERO SECTION
-         La primera sección que ve el visitante.
-         Dividida en dos columnas: texto a la izquierda, foto a la derecha.
-    ============================================================ -->
-    <section class="hero" id="home">
+   <!-- ============================================================
+     HERO SECTION
+     Partículas de fondo, typewriter en roles, parallax en foto,
+     glow pulsante y badges flotantes.
+============================================================ -->
 
-        <!-- Columna izquierda: mi presentación -->
-        <div class="hero-left" data-aos="fade-right">
+<!-- Canvas de partículas — va antes del hero, dentro del body -->
+<canvas id="particles-canvas"></canvas>
 
-            <!-- Pequeño texto arriba del nombre para llamar la atención del recruiter -->
-            <div class="status-chip"><div class="dot-green"></div> Available to work</div>
+<section class="hero" id="about">
 
-            <!-- Mi nombre: "Nicolás" normal y "Rodríguez" con efecto outline (solo el borde) -->
-            <h1 class="hero-name">
-                Nicolás<br>
-                <span class="accent">Rodríguez</span>
-            </h1>
+  <!-- Luz morada detrás del nombre -->
+  <div class="hero-glow"></div>
 
-            <!-- Mis dos roles: Data Analyst y Frontend, separados por un punto -->
-            <div class="hero-roles">
-                <span class="role-badge role-data">Data Analyst</span>
-                <div class="role-sep"></div>
-                <span class="role-badge role-front">Frontend Developer</span>
-            </div>
+  <!-- Izquierda: texto -->
+  <div class="hero-left" data-aos="fade-right">
 
-            <!-- Descripción corta sobre mí -->
-            <p class="hero-desc">
-                Transform data into decisions and designs into experiences.
-                Building from scratch.
-            </p>
+    <div class="hero-eyebrow">
+      <div class="available-dot"></div>
+      Ready to work
+    </div>
 
-            <!-- Botones de llamada a la acción -->
-            <div class="hero-cta">
-                <a href="#projects" class="btn-primary">Projects</a>
-                <a href="#contact" class="btn-ghost">Contact</a>
-                <a href="" class="btn-ghost">Dowload CV</a>
-            </div>
+    <h1 class="hero-name">
+      <span class="solid">Nicolás</span>
+      <span class="outline">Rodríguez</span>
+    </h1>
 
+    <div class="hero-roles">
+      <span class="role-badge role-data">Data Analyst</span>
+      <div class="role-sep"></div>
+      <!-- Typewriter cambia entre tus roles -->
+      <span class="typewriter-text" id="typewriter"></span>
+    </div>
+
+    <p class="hero-desc">
+      Transform data into decisions and designs into experiences.
+      Building everything from scratch.
+    </p>
+
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="#contact" class="btn-ghost">Contact</a>
+      <a href="cv.pdf" download class="btn-ghost">Download CV</a>
+    </div>
+
+  </div>
+
+  <!-- Derecha: foto con efectos -->
+  <div class="hero-right" data-aos="fade-left">
+    <div class="photo-wrap">
+
+      <!-- Glow morado detrás de la foto -->
+      <div class="photo-glow"></div>
+
+      <!-- Marco desplazado -->
+      <div class="photo-border"></div>
+
+      <!-- Foto con parallax al mover el mouse -->
+      <div class="photo-box" id="photo-box">
+        <img src="img/foto-perfil.png" alt="Nicolás Rodríguez">
+
+        <!-- Esquinas decorativas -->
+        <div class="photo-corner tl"></div>
+        <div class="photo-corner tr"></div>
+        <div class="photo-corner bl"></div>
+        <div class="photo-corner br"></div>
+      </div>
+
+      <!-- Badge flotante abajo izquierda -->
+      <div class="photo-badge">
+        <div class="badge-info">
+          <span class="badge-label">Specialty</span>
+          <span class="badge-value">Data Analyst</span>
         </div>
+      </div>
 
-        <!-- Columna derecha: mi foto -->
-        <div class="hero-right" data-aos="fade-left">
-
-            <!-- 
-                Contenedor de la foto con efecto de marco desplazado.
-                .photo-frame es el contenedor general.
-                .photo-border es el cuadro morado desplazado que se ve detrás.
-                .photo-box es donde va la foto real.
-            -->
-            <div class="photo-frame">
-                <div class="photo-border"></div>
-                <div class="photo-box">
-
-                    <!-- Esquinas decorativas en las 4 puntas de la foto -->
-                    <div class="photo-corner tl"></div>
-                    <div class="photo-corner tr"></div>
-                    <div class="photo-corner bl"></div>
-                    <div class="photo-corner br"></div>
-
-                    <img src="img/foto-perfil.png" alt="Nicolás Rodríguez" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-
-
-                </div>
-            </div>
-
+      <!-- Badge flotante arriba derecha -->
+      <div class="photo-badge-2">
+        <div class="badge-info">
+          <span class="badge-label">Also</span>
+          <span class="badge-value">Frontend Dev</span>
         </div>
+      </div>
 
-    </section>
+    </div>
+  </div>
+
+</section>
 <div class="section-divider">
     <div class="divider-line"></div>
     <div class="divider-center">
