@@ -21,6 +21,93 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+// ============================================================
+//  ABOUT ME — Animación de entrada tipo chat
+//  Simula una conversación real: puntitos → burbuja → puntitos...
+//  Se activa solo cuando el usuario llega a la sección con scroll.
+// ============================================================
+function initChatAnimation() {
+
+  const block   = document.querySelector('.chat-block');
+  const rows    = document.querySelectorAll('.chat-row');
+  const ts      = document.querySelector('.chat-timestamp');
+
+  // Si no existe la sección, salimos
+  if (!block || !rows.length) return;
+
+  // Creo el indicador de "escribiendo..." una sola vez y lo inserto al inicio del bloque
+  const typingEl = document.createElement('div');
+  typingEl.className = 'chat-typing';
+  typingEl.innerHTML = `
+    <div class="chat-avatar-ghost"></div>
+    <div class="typing-dots">
+      <span></span><span></span><span></span>
+    </div>
+  `;
+  block.prepend(typingEl);
+
+  // Tiempos en milisegundos para cada paso
+  // Ajusta estos valores si quieres que vaya más rápido o más lento
+  const TYPING_DURATION = 900;  // cuánto duran los puntitos visibles
+  const BUBBLE_DELAY    = 300;  // pausa entre que desaparecen los puntitos y aparece la burbuja
+  const BETWEEN         = 600;  // pausa entre una burbuja y los siguientes puntitos
+
+  // Función que muestra los puntitos, espera, los esconde y resuelve la promesa
+  function showTyping() {
+    return new Promise(resolve => {
+      typingEl.classList.add('visible');
+      typingEl.classList.remove('hidden');
+
+      setTimeout(() => {
+        typingEl.classList.add('hidden');
+        typingEl.classList.remove('visible');
+        setTimeout(resolve, BUBBLE_DELAY);
+      }, TYPING_DURATION);
+    });
+  }
+
+  // Función que revela una fila (chat-row) con la animación de fade+slide
+  function showRow(row) {
+    return new Promise(resolve => {
+      row.classList.add('visible');
+      // Espero a que termine la transición CSS (400ms) antes de continuar
+      setTimeout(resolve, 400);
+    });
+  }
+
+  // Secuencia completa: puntitos → burbuja 1 → puntitos → burbuja 2 → ...
+  async function runSequence() {
+    for (let i = 0; i < rows.length; i++) {
+      await showTyping();          // muestro los puntitos
+      await showRow(rows[i]);      // revelo la burbuja
+      if (i < rows.length - 1) {
+        // Pausa entre burbujas (excepto después de la última)
+        await new Promise(r => setTimeout(r, BETWEEN));
+      }
+    }
+    // Al final muestro el timestamp
+    if (ts) {
+      setTimeout(() => ts.classList.add('visible'), 300);
+    }
+  }
+
+  // Uso IntersectionObserver para que la animación arranque
+  // solo cuando el usuario hace scroll hasta la sección,
+  // no al cargar la página. Se dispara una sola vez (once: true).
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        runSequence();
+        observer.disconnect(); // evito que se repita si el usuario vuelve a scrollear
+      }
+    });
+  }, { threshold: 0.3 }); // 0.3 = arranca cuando el 30% de la sección es visible
+
+  observer.observe(block);
+}
+
+// Ejecuto la función
+initChatAnimation();
 
     
     // ===== FILTRADO DE PROYECTOS (CON CONTADORES AUTOMÁTICOS) =====

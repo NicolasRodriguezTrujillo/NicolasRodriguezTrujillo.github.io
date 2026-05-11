@@ -190,74 +190,80 @@
 </div>
     <!-- 
  
-  ============================================================
-  En lugar de dividir en dos columnas, el avatar aparece 
-  "flotando" junto al texto como si estuviera hablando.
-  El texto principal tiene forma de burbuja de comentario.
--->
-<!-- ============================================================
+ <!-- ============================================================
      ABOUT ME SECTION
-     Una columna: avatar a la izquierda, burbujas saliendo de él.
+     Avatar a la izquierda con cola apuntando hacia él,
+     burbujas saliendo como un chat real.
+     Solo la primera burbuja tiene cola y avatar visible.
 ============================================================ -->
 <section class="about-single" id="about">
 
-  <!-- Header de la sección -->
+  <!-- Header de la sección: eyebrow a la izq, número a la der -->
   <div class="about-header">
     <div class="hero-eyebrow">About me</div>
     <span class="section-num">01 / 05</span>
   </div>
 
+  <!-- Título con la palabra "Am" en outline morado -->
   <h2 class="section-title">Who I <span class="title-outline">Am</span></h2>
 
-  <!-- Bloque conversacional: avatar + burbujas en fila -->
-  <div class="conversation-block">
+  <!-- Bloque de chat: columna de burbujas con avatar -->
+  <div class="chat-block">
 
-    <!-- Avatar con status debajo -->
-    <div class="avatar-col">
-      <img src="img/avatar.png" alt="Nicolás Rodríguez" class="avatar-comment">
-    </div>
-
-    <!-- Burbujas saliendo del avatar -->
-    <div class="bubbles-col">
-
-      <!-- Burbuja principal -->
-      <div class="comment-bubble">
-        <p>
-          Hi! I'm <strong class="highlight">Nicolás Rodríguez</strong>, 
-          a <strong class="highlight">Data Analyst with a Frontend soul</strong>. 
-          I transform data into decisions and designs into experiences. 
-          Building everything from scratch.
-        </p>
-        <p>
-          I love solving problems where numbers and people meet — dashboards 
-          that don't just measure KPIs, but that 
-          <span class="highlight-teal">anyone on the team can use without a manual</span>.
-        </p>
-        <p>
-          Outside of code, you'll find me learning something new, 
-          playing chess, or cycling without a map. 
-          My philosophy? <span class="highlight">If it doesn't exist, I build it.</span>
-        </p>
-        <div class="bubble-footer">
-          <span>✦ Nicolás, building from scratch ✦</span>
-          <span class="bubble-time">Just now</span>
+    <!-- 
+      Fila 1: la única con avatar visible.
+      La clase "first" en chat-bubble-wrap es la que dibuja
+      la colita triangular apuntando al avatar con ::before y ::after
+    -->
+    <div class="chat-row">
+      <img src="img/avatar.png" alt="Nicolás Rodríguez" class="chat-avatar">
+      <div class="chat-bubble-wrap first">
+        <div class="chat-bubble">
+          Soy <span class="cb-hl">Nicolás Rodríguez</span> —
+          <span class="cb-hl">Data Analyst con alma de Frontend Dev</span>.
+          Convierto datos en decisiones y diseños en experiencias.
         </div>
       </div>
+    </div>
 
-      <!-- Segunda burbuja: soft skills -->
-      <div class="bubble-skills">
-        <span class="bubble-skills-label">Soft Skills</span>
-        <div class="skills-row">
-          <span class="skill-pill">Fast Learner</span>
-          <span class="skill-pill">Team Player</span>
-          <span class="skill-pill">Problem Solver</span>
-          <span class="skill-pill">Self-taught</span>
-          <span class="skill-pill">Detail Oriented</span>
-          <span class="skill-pill">Curious</span>
+    <!-- 
+      Fila 2: sin avatar para que parezca el mismo mensaje continuado.
+      chat-avatar-ghost mantiene el mismo ancho del avatar 
+      para que las burbujas queden alineadas.
+    -->
+    <div class="chat-row">
+      <div class="chat-avatar-ghost"></div>
+      <div class="chat-bubble-wrap">
+        <div class="chat-bubble">
+          Me apasiona construir dashboards que
+          <span class="cb-teal">cualquiera en el equipo pueda usar sin necesitar un manual</span>.
+          Fuera del código: ajedrez, bici y aprender algo nuevo cada semana.
         </div>
       </div>
-
     </div>
+
+    <!-- 
+      Fila 3: el tagline, separado visualmente del resto.
+      Usa chat-bubble-tag en vez de chat-bubble para tener
+      el fondo morado y el estilo más llamativo.
+      margin-top: 4px le da un pequeño respiro extra.
+    -->
+    <div class="chat-row" style="margin-top: 4px;">
+      <div class="chat-avatar-ghost"></div>
+      <div class="chat-bubble-wrap">
+        <div class="chat-bubble-tag">
+          <!-- Ícono de llave inglesa, representa "construir" -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          If it doesn't exist, I build it.
+        </div>
+      </div>
+    </div>
+
+    <!-- Timestamp al final de toda la conversación, solo uno -->
+    <div class="chat-timestamp">Just now</div>
+
   </div>
 
 </section>
