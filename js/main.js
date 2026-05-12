@@ -233,5 +233,103 @@ function initChatAnimation() {
   observer.observe(block);
 }
 
+/* ============================================================
+   PARTÍCULAS DE FONDO
+   Puntos morados flotando sutilmente en toda la página.
+============================================================ */
+const canvas = document.getElementById('particles-canvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+const count = 60;
+
+for (let i = 0; i < count; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 1.5 + 0.3,
+    dx: (Math.random() - 0.5) * 0.3,
+    dy: (Math.random() - 0.5) * 0.3,
+    opacity: Math.random() * 0.4 + 0.1
+  });
+}
+
+function drawParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(139, 92, 246, ${p.opacity})`;
+    ctx.fill();
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+  });
+  requestAnimationFrame(drawParticles);
+}
+
+drawParticles();
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+/* ============================================================
+   TYPEWRITER
+   Cambia entre tus roles automáticamente.
+   Modifica el array 'roles' con los textos que quieras mostrar.
+============================================================ */
+const roles = ['Frontend Developer', 'Data Visualizer', 'Problem Solver', 'Building from Scratch'];
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+const typewriterEl = document.getElementById('typewriter');
+
+function typeEffect() {
+  const current = roles[roleIndex];
+  if (!deleting) {
+    typewriterEl.textContent = current.slice(0, charIndex + 1);
+    charIndex++;
+    if (charIndex === current.length) {
+      deleting = true;
+      setTimeout(typeEffect, 1800);
+      return;
+    }
+  } else {
+    typewriterEl.textContent = current.slice(0, charIndex - 1);
+    charIndex--;
+    if (charIndex === 0) {
+      deleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+  }
+  setTimeout(typeEffect, deleting ? 40 : 80);
+}
+
+typeEffect();
+
+/* ============================================================
+   PARALLAX 3D EN LA FOTO
+   La foto se inclina suavemente según la posición del mouse.
+============================================================ */
+const photoBox = document.getElementById('photo-box');
+
+if (photoBox) {
+  document.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 12;
+    const y = (e.clientY / window.innerHeight - 0.5) * 12;
+    photoBox.style.transform = `perspective(800px) rotateY(${x}deg) rotateX(${-y}deg)`;
+  });
+
+  document.addEventListener('mouseleave', () => {
+    photoBox.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
+  });
+}
+
 // Ejecuto la función
 initChatAnimation();
