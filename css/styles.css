@@ -768,6 +768,48 @@ html {
    por este sistema de chat más limpio y real.
 ================================================================ */
 
+.about-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: #7c3aed;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+  line-height: 1.05;
+}
+
+.title-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(139,92,246,0.6);
+}
+
 /* Columna principal: apila las filas verticalmente */
 .chat-block {
   display: flex;
