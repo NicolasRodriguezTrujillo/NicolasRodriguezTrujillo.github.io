@@ -873,6 +873,66 @@ html {
   30%            { transform: translateY(-5px); opacity: 1; }
 }
 
+/* Indicador de escritura (tres puntitos) */
+.chat-typing {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+}
+
+.typing-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(20,20,38,0.9);
+  border: 1px solid rgba(139,92,246,0.2);
+  border-radius: 4px 16px 16px 16px;
+  padding: 14px 18px;
+}
+
+.typing-dots span {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(139,92,246,0.5);
+  animation: typing-bounce 1s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) { animation-delay: 0s; }
+.typing-dots span:nth-child(2) { animation-delay: 0.18s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.36s; }
+
+@keyframes typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30%            { transform: translateY(-5px); opacity: 1; }
+}
+
+/* Timestamp */
+.chat-timestamp {
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.06em;
+  padding-left: 64px; /* alineado con las burbujas */
+  margin-top: 4px;
+  opacity: 0; /* el JS lo revela al final */
+}
+
+/* Tagline burbuja especial */
+.chat-bubble-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(124,58,237,0.15);
+  border: 1px solid rgba(139,92,246,0.3);
+  border-radius: 4px 16px 16px 16px;
+  padding: 10px 18px;
+  font-size: 14px;
+  color: #c4b5fd;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
 /* ================================================================
    DIVISOR ENTRE SECCIONES
    Línea con punto morado brillante en el centro.
