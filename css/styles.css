@@ -797,11 +797,11 @@ html {
 
 .section-title {
   font-family: 'Syne', sans-serif;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
   color: #fff;
   letter-spacing: -0.02em;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   line-height: 1.05;
 }
 
@@ -814,20 +814,20 @@ html {
 .chat-block {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 }
 
 /* Cada fila: avatar (o ghost) + burbuja en horizontal */
 .chat-row {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   align-items: flex-start;
 }
 
 /* Avatar real — solo aparece en la primera fila */
 .chat-avatar {
-  width: 48px;
-  height: 48px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   object-fit: cover;
   border: 1.5px solid rgba(139,92,246,0.45);
@@ -841,7 +841,7 @@ html {
   sin repetir el avatar en cada fila.
 */
 .chat-avatar-ghost {
-  width: 48px;
+  width: 58px;
   flex-shrink: 0;
 }
 
@@ -853,7 +853,7 @@ html {
 }
 
 .about-single {
-  padding: 3rem 2.5rem;
+  padding: 5rem 2.5rem;
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
@@ -914,11 +914,11 @@ html {
   background: rgba(20,20,38,0.9);
   border: 1px solid rgba(139,92,246,0.2);
   border-radius: 4px 16px 16px 16px; /* esquina top-left pequeña = origen del mensaje */
-  padding: 16px 20px;
-  font-size: 15px;
-  line-height: 1.8;
+  padding: 20px 28px;
+  font-size: 16px;
+  line-height: 1.85;
   color: rgba(255,255,255,0.72);
-  max-width: 620px;
+  max-width: 680px;
   backdrop-filter: blur(8px);
 }
 
