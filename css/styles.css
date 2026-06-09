@@ -764,93 +764,12 @@ html {
 
 /* ================================================================
    ABOUT ME — Chat bubbles rediseñado
-   Reemplazo el bloque .conversation-block y .comment-bubble
-   por este sistema de chat más limpio y real.
+
 ================================================================ */
 
-.about-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.section-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  color: rgba(255,255,255,0.3);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.section-eyebrow::before {
-  content: '';
-  width: 24px;
-  height: 1px;
-  background: #7c3aed;
-  display: block;
-}
-
-.section-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.02em;
-  margin-bottom: 2.5rem;
-  line-height: 1.05;
-}
-
-.title-outline {
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(139,92,246,0.6);
-}
-
-/* Columna principal: apila las filas verticalmente */
-.chat-block {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* Cada fila: avatar (o ghost) + burbuja en horizontal */
-.chat-row {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-/* Avatar real — solo aparece en la primera fila */
-.chat-avatar {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1.5px solid rgba(139,92,246,0.45);
-  flex-shrink: 0;
-  margin-top: 2px; /* alinea visualmente con el texto de la burbuja */
-}
-
-/* 
-  Ghost: mismo ancho que el avatar pero invisible.
-  Hace que las burbujas 2 y 3 queden alineadas con la primera
-  sin repetir el avatar en cada fila.
-*/
-.chat-avatar-ghost {
-  width: 58px;
-  flex-shrink: 0;
-}
-
-/* Wrapper de la burbuja — necesario para posicionar la cola con CSS */
-.chat-bubble-wrap {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
+/* ================================================================
+   ABOUT ME SECTION
+================================================================ */
 
 .about-single {
   padding: 5rem 2.5rem;
@@ -868,137 +787,220 @@ html {
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.chat-row {
-  opacity: 0;
-  transform: translateY(8px);
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+  line-height: 1.05;
 }
 
-.chat-timestamp {
-  opacity: 0;
+.title-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(139,92,246,0.6);
 }
 
-/* 
-  Cola exterior (borde): triángulo morado semitransparente.
-  Solo aparece en la primera burbuja gracias a la clase "first".
-  ::before dibuja el triángulo del color del borde de la burbuja.
-*/
-.chat-bubble-wrap.first::before {
-  content: '';
-  position: absolute;
-  left: -8px;
-  top: 14px;
-  width: 0; height: 0;
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  border-right: 9px solid rgba(139,92,246,0.2); /* color del borde */
-}
-
-/* 
-  Cola interior (relleno): triángulo del color del fondo de la burbuja.
-  Va encima del ::before para tapar el interior del triángulo
-  y simular que la cola tiene borde solo en los lados.
-*/
-.chat-bubble-wrap.first::after {
-  content: '';
-  position: absolute;
-  left: -6px;
-  top: 15px;
-  width: 0; height: 0;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  border-right: 8px solid rgba(20,20,38,0.9); /* mismo color que .chat-bubble */
-}
-
-/* Burbuja estándar — fondo oscuro con borde morado sutil */
-.chat-bubble {
-  background: rgba(20,20,38,0.9);
-  border: 1px solid rgba(139,92,246,0.2);
-  border-radius: 4px 16px 16px 16px; /* esquina top-left pequeña = origen del mensaje */
-  padding: 20px 28px;
-  font-size: 16px;
-  line-height: 1.85;
-  color: rgba(255,255,255,0.72);
-  max-width: 680px;
-  backdrop-filter: blur(8px);
-}
-
-/* Texto destacado en morado claro — nombre y rol */
-.cb-hl { color: #c4b5fd; font-weight: 500; }
-
-/* Texto destacado en verde menta — la frase del equipo */
-.cb-teal { color: #6ee7b7; font-weight: 500; }
-
-
-
-/* Cada punto rebota con un delay distinto */
-.typing-dots span:nth-child(1) { animation-delay: 0s; }
-.typing-dots span:nth-child(2) { animation-delay: 0.18s; }
-.typing-dots span:nth-child(3) { animation-delay: 0.36s; }
-
-@keyframes typing-bounce {
-  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-  30%            { transform: translateY(-5px); opacity: 1; }
-}
-
-/* Indicador de escritura (tres puntitos) */
-.chat-typing {
+/* Avatar centrado */
+.about-avatar-wrap {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  opacity: 0;
+  gap: 1rem;
 }
 
-.typing-dots {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  background: rgba(20,20,38,0.9);
-  border: 1px solid rgba(139,92,246,0.2);
-  border-radius: 4px 16px 16px 16px;
-  padding: 14px 18px;
+.avatar-frame {
+  position: relative;
+  width: 120px;
+  height: 120px;
 }
 
-.typing-dots span {
-  display: block;
-  width: 7px;
-  height: 7px;
+.avatar-ring {
+  position: absolute;
+  inset: -5px;
   border-radius: 50%;
-  background: rgba(139,92,246,0.5);
-  animation: typing-bounce 1s infinite ease-in-out;
+  border: 1.5px solid rgba(139,92,246,0.15);
+  border-top-color: #7c3aed;
+  animation: spin 8s linear infinite;
 }
 
-.typing-dots span:nth-child(1) { animation-delay: 0s; }
-.typing-dots span:nth-child(2) { animation-delay: 0.18s; }
-.typing-dots span:nth-child(3) { animation-delay: 0.36s; }
+@keyframes spin { to { transform: rotate(360deg); } }
 
-@keyframes typing-bounce {
-  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-  30%            { transform: translateY(-5px); opacity: 1; }
+.avatar-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(139,92,246,0.4);
+  display: block;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 20px rgba(124,58,237,0.15);
 }
 
-/* Timestamp */
-.chat-timestamp {
+.status-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 11px;
-  color: rgba(255,255,255,0.2);
-  letter-spacing: 0.06em;
-  padding-left: 64px; /* alineado con las burbujas */
-  margin-top: 4px;
-  opacity: 0; /* el JS lo revela al final */
+  color: rgba(255,255,255,0.35);
+  background: rgba(34,197,94,0.06);
+  border: 1px solid rgba(34,197,94,0.12);
+  padding: 4px 12px;
+  border-radius: 100px;
 }
 
-/* Tagline burbuja especial */
-.chat-bubble-tag {
+.dot-green {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Línea conectora avatar → burbuja */
+.avatar-connector {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(180deg, rgba(139,92,246,0.5), rgba(139,92,246,0.1));
+  margin: 0 auto;
+}
+
+/* Burbuja principal */
+.about-bubble {
+  background: rgba(20,20,38,0.8);
+  border: 1px solid rgba(139,92,246,0.2);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  position: relative;
+  backdrop-filter: blur(8px);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Colita apuntando hacia arriba al avatar */
+.about-bubble::before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-bottom-color: rgba(139,92,246,0.2);
+  border-top: none;
+}
+
+.about-bubble::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-bottom-color: rgba(20,20,38,0.85);
+  border-top: none;
+}
+
+.about-bubble p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.about-bubble p:last-of-type { margin-bottom: 0; }
+
+/* Colores de texto destacado */
+.cb-hl    { color: #c4b5fd; font-weight: 500; }
+.cb-teal  { color: #6ee7b7; font-weight: 500; }
+.cb-white { color: rgba(255,255,255,0.9); font-weight: 500; }
+
+/* Footer de la burbuja */
+.bubble-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(139,92,246,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bubble-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(124,58,237,0.15);
-  border: 1px solid rgba(139,92,246,0.3);
-  border-radius: 4px 16px 16px 16px;
-  padding: 10px 18px;
-  font-size: 14px;
+  background: rgba(124,58,237,0.12);
+  border: 1px solid rgba(139,92,246,0.25);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 12px;
   color: #c4b5fd;
   font-weight: 500;
-  letter-spacing: 0.02em;
+}
+
+.bubble-time {
+  font-size: 10px;
+  color: rgba(255,255,255,0.15);
+  letter-spacing: 0.06em;
+}
+
+/* Soft skills */
+.about-skills-wrap {
+  max-width: 760px;
+  margin: 1.25rem auto 0;
+  background: rgba(20,20,38,0.5);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.2s;
+}
+
+.about-skills-wrap:hover { border-color: rgba(139,92,246,0.2); }
+
+.card-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-pill {
+  font-size: 11px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.03);
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.skill-pill:hover {
+  border-color: rgba(139,92,246,0.35);
+  color: #a78bfa;
+  background: rgba(139,92,246,0.07);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-single { padding: 4rem 1.5rem; }
+  .section-title { font-size: 2.5rem; }
+  .about-bubble { padding: 1.5rem; }
+  .about-bubble::before,
+  .about-bubble::after { display: none; }
 }
 /* ================================================================
    DIVISOR ENTRE SECCIONES
