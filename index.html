@@ -692,122 +692,58 @@
         <div class="divider-line"></div>
     </div>
 
-    <!-- ============================================================
+   <!-- ============================================================
      CONTACT SECTION
-     Dos columnas: izquierda info de contacto, derecha formulario.
-     El formulario usa Formspree para enviar emails sin backend.
+     Versión simple: sin formulario, botones directos de
+     email y WhatsApp, más iconos sociales.
 ============================================================ -->
 <section class="contact-section" id="contact">
 
-  <div class="contact-header">
-    <div class="hero-eyebrow">Contact</div>
-    <span class="section-num">05 / 05</span>
+  <div class="section-eyebrow">Contact</div>
+
+  <h2 class="contact-title">Let's <span>Talk</span></h2>
+
+  <p class="contact-desc">
+    Open to junior Data Analyst and Frontend roles.
+    Drop me a message — I usually reply within a day.
+  </p>
+
+  <div class="contact-actions">
+    <a href="mailto:tu@email.com" class="btn-main btn-email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+      </svg>
+      Send me an email
+    </a>
+    <!-- Reemplaza el número con tu código de país + número, sin espacios ni símbolos -->
+    <a href="https://wa.me/573105994386" target="_blank" class="btn-main btn-whatsapp">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.83 14.07c-.25.7-1.45 1.35-2.01 1.43-.51.08-1.16.11-1.87-.12-.43-.13-.98-.31-1.69-.61-2.98-1.29-4.93-4.3-5.08-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.6-.37.8-.37.2 0 .4.002.57.01.18.008.43-.07.67.51.25.6.85 2.07.93 2.22.08.15.13.32.03.51-.1.19-.15.31-.3.48-.15.17-.31.38-.45.51-.15.13-.3.27-.13.55.17.28.77 1.26 1.65 2.04 1.13 1.01 2.09 1.32 2.38 1.47.29.15.46.13.63-.05.17-.18.73-.85.93-1.14.2-.29.4-.24.66-.14.27.1 1.71.81 2 .96.3.15.5.22.57.35.07.13.07.74-.18 1.44z"/>
+      </svg>
+      WhatsApp
+    </a>
   </div>
 
-  <div class="contact-grid">
-
-    <!-- Columna izquierda: info -->
-    <div class="contact-left">
-      <h2 class="contact-title">Let's <span class="title-outline">Talk</span></h2>
-      <p class="contact-desc">
-        Whether you have a project in mind, want to collaborate, 
-        or just want to say hi — my inbox is always open.
-      </p>
-
-      <!-- Links de contacto directo -->
-      <div class="contact-links">
-
-        <a href="mailto:tu@email.com" class="contact-link-item">
-          <div class="contact-link-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-            </svg>
-          </div>
-          <div class="contact-link-info">
-            <span class="contact-link-label">Email</span>
-            <span class="contact-link-value">tu@email.com</span>
-          </div>
-          <svg class="contact-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-
-        <a href="https://linkedin.com/in/tu-perfil" class="contact-link-item" target="_blank">
-          <div class="contact-link-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-            </svg>
-          </div>
-          <div class="contact-link-info">
-            <span class="contact-link-label">LinkedIn</span>
-            <span class="contact-link-value">Nicolás Rodríguez</span>
-          </div>
-          <svg class="contact-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-
-        <a href="https://github.com/tu-usuario" class="contact-link-item" target="_blank">
-          <div class="contact-link-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-            </svg>
-          </div>
-          <div class="contact-link-info">
-            <span class="contact-link-label">GitHub</span>
-            <span class="contact-link-value">tu-usuario</span>
-          </div>
-          <svg class="contact-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-
-      </div>
-    </div>
-
-    <!-- Columna derecha: formulario -->
-    <div class="contact-right">
-      <!--
-        Para que el formulario funcione de verdad sin backend,
-        usa Formspree: ve a formspree.io, crea una cuenta gratis
-        y reemplaza YOUR_FORM_ID con tu ID.
-      -->
-      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="name">Name</label>
-            <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">Email</label>
-            <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="subject">Subject</label>
-          <input class="form-input" type="text" id="subject" name="subject" placeholder="What's this about?">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="message">Message</label>
-          <textarea class="form-input form-textarea" id="message" name="message" placeholder="Tell me about your project or idea..." required></textarea>
-        </div>
-
-        <button class="form-submit" type="submit">
-          Send message
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-          </svg>
-        </button>
-
-      </form>
-    </div>
-
+  <div class="contact-socials">
+    <a href="https://linkedin.com/in/tu-perfil" class="social-icon" target="_blank" title="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+        <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+      </svg>
+    </a>
+    <a href="https://github.com/tu-usuario" class="social-icon" target="_blank" title="GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+      </svg>
+    </a>
   </div>
+
+  <div class="contact-status">
+    <div class="dot-green"></div>
+    Available to work
+  </div>
+
 </section>
 <div class="section-divider">
         <div class="divider-line"></div>
@@ -816,19 +752,16 @@
     </div>
 <!-- ============================================================
      FOOTER
-     Simple y limpio: logo, links de navegación y redes sociales.
-     El año se actualiza automáticamente con JS.
+     Logo + nav con efecto liquid glass + sociales + status.
 ============================================================ -->
 <footer class="footer">
-
   <div class="footer-inner">
 
-    <!-- Logo y frase -->
     <div class="footer-brand">
-      <span class="footer-logo">NR<span>.</span></span>cv 
+      <span class="footer-logo">NR<span>.</span></span>
+      <p class="footer-tagline">Building from scratch, one line at a time.</p>
     </div>
 
-    <!-- Links de navegación rápida -->
     <nav class="footer-nav">
       <a href="#about">About</a>
       <a href="#education">Education</a>
@@ -837,7 +770,6 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Redes sociales -->
     <div class="footer-socials">
       <a href="https://linkedin.com/in/tu-perfil" target="_blank" title="LinkedIn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -850,17 +782,15 @@
           <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
         </svg>
       </a>
-      <a href="mailto:tu@email.com" title="Email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="2" y="4" width="20" height="16" rx="2"/>
-          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+      <a href="https://wa.me/573105994386" target="_blank" title="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.83 14.07c-.25.7-1.45 1.35-2.01 1.43-.51.08-1.16.11-1.87-.12-.43-.13-.98-.31-1.69-.61-2.98-1.29-4.93-4.3-5.08-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.6-.37.8-.37.2 0 .4.002.57.01.18.008.43-.07.67.51.25.6.85 2.07.93 2.22.08.15.13.32.03.51-.1.19-.15.31-.3.48-.15.17-.31.38-.45.51-.15.13-.3.27-.13.55.17.28.77 1.26 1.65 2.04 1.13 1.01 2.09 1.32 2.38 1.47.29.15.46.13.63-.05.17-.18.73-.85.93-1.14.2-.29.4-.24.66-.14.27.1 1.71.81 2 .96.3.15.5.22.57.35.07.13.07.74-.18 1.44z"/>
         </svg>
       </a>
     </div>
 
   </div>
 
-  <!-- Línea inferior con copyright -->
   <div class="footer-bottom">
     <span>© <span id="footer-year"></span> Nicolás Rodríguez. Built with HTML, CSS & JS.</span>
     <span class="footer-status">
@@ -868,7 +798,6 @@
       Available to work
     </span>
   </div>
-
 </footer>
     <!-- ============================================================
          SCRIPTS
